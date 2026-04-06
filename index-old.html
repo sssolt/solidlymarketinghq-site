@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en" class="antialiased selection:bg-blue-600 selection:text-white">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SolidlyLeads | High-Intent Exclusive Leads</title>
+    
+    <!-- Typography: Instrument Serif (Headings) & Inter (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#F9FAFB', /* Very light gray */
+                        surface: '#FFFFFF',    /* Pure white cards */
+                        border: '#E2E8F0',     /* Light slate border */
+                        brand: '#0F172A',      /* Deep Navy/Black for primary actions */
+                        accent: '#2563EB',     /* Mature Royal Blue for small ticks/highlights */
+                        muted: '#64748B',      /* Slate text */
+                        textMain: '#0F172A',   /* Nearly black text */
+                    },
+                    fontFamily: {
+                        serif: ['Instrument Serif', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'grid-pattern': "linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px)",
+                    },
+                    boxShadow: {
+                        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02)',
+                        'card-hover': '0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02)',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #F9FAFB;
+            color: #0F172A;
+        }
+
+        /* LIGHT GRID BACKGROUND */
+        .technical-grid {
+            position: absolute; inset: 0; pointer-events: none;
+            background-size: 40px 40px;
+            background-image: var(--tw-gradient-grid-pattern);
+            mask-image: linear-gradient(to bottom, black 40%, transparent 95%);
+        }
+
+        /* CAMBIE-STYLE CLEAN TILES */
+        .cambie-card {
+            background-color: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cambie-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.01);
+            border-color: #CBD5E1;
+        }
+
+        /* FAQ ANIMATION */
+        .faq-item[open] summary ~ * { animation: sweep .3s ease-in-out; }
+        @keyframes sweep { 0% {opacity: 0; margin-top: -10px} 100% {opacity: 1; margin-top: 10px}}
+        
+        /* SCROLL ANIMATION */
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-scroll {
+            display: flex;
+            width: max-content;
+            animation: scroll 60s linear infinite;
+        }
+
+        /* SCROLLBAR */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #F9FAFB; }
+        ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 3px; }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Global Background Elements -->
+    <div class="fixed inset-0 bg-grid-pattern technical-grid z-0"></div>
+
+    <!-- NAVIGATION -->
+    <nav class="fixed top-0 left-0 right-0 z-50 flex justify-center pt-6 px-6">
+        <div class="bg-white/80 backdrop-blur-md border border-border rounded-full px-6 py-3 flex items-center gap-8 shadow-sm">
+            <a href="index.html" class="font-serif text-2xl tracking-tight text-textMain">SolidlyLeads</a>
+            <div class="hidden md:flex items-center gap-8 text-[13px] font-sans font-medium tracking-wide">
+                <a href="#problem" class="text-muted hover:text-textMain transition-colors">Problem</a>
+                <a href="#solution" class="text-muted hover:text-textMain transition-colors">Solution</a>
+                <a href="#comparison" class="text-muted hover:text-textMain transition-colors">Compare</a>
+                <a href="#faq" class="text-muted hover:text-textMain transition-colors">FAQ</a>
+            </div>
+            <a href="#contact" class="hidden md:block bg-brand text-white text-xs font-semibold tracking-widest px-6 py-2.5 rounded-full hover:bg-black transition-colors">
+                Get Leads
+            </a>
+        </div>
+    </nav>
+
+    <!-- SECTION 1: HERO -->
+    <section class="relative min-h-screen flex flex-col justify-center items-center pt-32 pb-20 border-b border-border overflow-hidden z-10">
+        
+        <div class="relative z-10 text-center max-w-4xl px-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-white text-textMain text-[10px] font-sans font-semibold uppercase tracking-[0.1em] mb-8 shadow-sm">
+                <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
+                Accepting New Partners Q1 2026
+            </div>
+
+            <!-- Headline Font (Instrument Serif) -->
+            <h1 class="text-6xl md:text-8xl font-serif text-textMain leading-[1] tracking-tight mb-8">
+                High-Intent Leads.<br>
+                100% Exclusive.<br>
+                <span class="text-textMain opacity-60">Direct From The Source.</span>
+            </h1>
+
+            <p class="text-lg text-muted font-normal max-w-xl mx-auto mb-12 leading-relaxed font-sans">
+                Stop gambling with marketing agencies and low-quality brokers. We generate our own traffic to deliver authenticated, real-time leads for your business.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12 max-w-4xl mx-auto font-sans w-full">
+                <div class="flex flex-col items-center p-4 border-r border-border last:border-0">
+                    <!-- Bold Body Font (Inter) for subheads -->
+                    <strong class="text-textMain font-bold text-sm mb-1">Pay Per Qualified Lead</strong>
+                    <span class="text-xs text-muted">No retainers, no setup fees</span>
+                </div>
+                <div class="flex flex-col items-center p-4 border-r border-border last:border-0">
+                    <strong class="text-textMain font-bold text-sm mb-1">Direct Source Quality</strong>
+                    <span class="text-xs text-muted">We aren't brokers—we run ads</span>
+                </div>
+                <div class="flex flex-col items-center p-4">
+                    <strong class="text-textMain font-bold text-sm mb-1">Ready in 5-7 Days</strong>
+                    <span class="text-xs text-muted">Launch custom campaigns fast</span>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center gap-4">
+                <a href="#contact" class="px-8 py-3.5 bg-brand text-white font-sans font-semibold text-sm tracking-wide rounded hover:bg-black transition-colors shadow-lg shadow-blue-900/10">
+                    Get Qualified Leads
+                </a>
+                <span class="text-[10px] uppercase tracking-widest text-muted">No credit card required for consultation</span>
+            </div>
+        </div>
+
+        <!-- Trust Strip (Infinite Loop Fixed) -->
+        <div class="absolute bottom-0 w-full border-t border-border bg-white/50 backdrop-blur-sm py-6 overflow-hidden">
+            <div class="flex justify-center whitespace-nowrap overflow-hidden">
+                <div class="animate-scroll opacity-60">
+                    <span class="text-xs font-sans font-medium text-muted uppercase tracking-[0.15em] mx-12">Trusted by firms in: MVA • Personal Injury • Life Insurance • Tax & Debt Relief • Gold IRA • Home Services • IVR • Financial Services</span>
+                    <span class="text-xs font-sans font-medium text-muted uppercase tracking-[0.15em] mx-12">Trusted by firms in: MVA • Personal Injury • Life Insurance • Tax & Debt Relief • Gold IRA • Home Services • IVR • Financial Services</span>
+                    <!-- Duplicated for seamless loop -->
+                    <span class="text-xs font-sans font-medium text-muted uppercase tracking-[0.15em] mx-12">Trusted by firms in: MVA • Personal Injury • Life Insurance • Tax & Debt Relief • Gold IRA • Home Services • IVR • Financial Services</span>
+                    <span class="text-xs font-sans font-medium text-muted uppercase tracking-[0.15em] mx-12">Trusted by firms in: MVA • Personal Injury • Life Insurance • Tax & Debt Relief • Gold IRA • Home Services • IVR • Financial Services</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: THE PROBLEM -->
+    <section class="py-32 px-6 border-b border-border z-10 relative bg-white" id="problem">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-20">
+                <span class="text-accent font-sans font-bold text-[10px] uppercase tracking-[0.2em] mb-4 block">The Problem</span>
+                <h2 class="text-5xl font-serif text-textMain mb-6">Why Most Businesses Waste Money on Marketing</h2>
+                <p class="text-muted text-lg max-w-2xl mx-auto font-sans">
+                    Running your own lead generation campaigns is a gamble. You're constantly testing, burning budget, and hoping something works—with no guarantee of results.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <div class="cambie-card p-10">
+                    <div class="mb-6 p-3 bg-gray-50 inline-block rounded-lg"><i data-lucide="alert-triangle" class="text-textMain w-6 h-6"></i></div>
+                    <!-- Headline Font -->
+                    <h3 class="text-2xl font-serif text-textMain mb-4">The Agency Trap</h3>
+                    <!-- Body Font -->
+                    <p class="text-muted text-sm leading-relaxed mb-6 font-sans">
+                        Traditional marketing agencies promise the world but deliver disappointment. They charge <strong>$3,000-$10,000/month</strong> in retainers, take 4-6 weeks to launch, and lock you into long-term contracts.
+                    </p>
+                    <p class="text-sm text-textMain font-medium border-l-2 border-red-500 pl-4 font-sans">
+                        Results aren't guaranteed. You could invest six months and $50,000 with nothing to show for it.
+                    </p>
+                </div>
+
+                <div class="cambie-card p-10">
+                    <div class="mb-6 p-3 bg-gray-50 inline-block rounded-lg"><i data-lucide="users" class="text-textMain w-6 h-6"></i></div>
+                    <h3 class="text-2xl font-serif text-textMain mb-4">The Broker Issue</h3>
+                    <p class="text-muted text-sm leading-relaxed mb-6 font-sans">
+                        Most lead providers aren't generating leads—they're reselling recycled data from third-party publishers. These brokers buy cheap bulk traffic and resell the same lead to 5+ companies.
+                    </p>
+                    <p class="text-sm text-textMain font-medium border-l-2 border-red-500 pl-4 font-sans">
+                        Result? You're calling prospects who've already been bombarded by your competitors. Quality is nonexistent.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: THE SOLUTION (BENTO GRID) -->
+    <section class="py-32 px-6 border-b border-border z-10 relative" id="solution">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <h2 class="text-5xl font-serif text-textMain mb-6">SolidlyLeads Pays For The Marketing.<br><span class="text-textMain opacity-50">You Only Pay For The Result.</span></h2>
+                <p class="text-muted text-lg font-sans">
+                    We act as your internal performance marketing team, but with zero risk to you. We absorb the ad spend, generate the traffic, verify the leads, and deliver only qualified prospects to your inbox.
+                </p>
+            </div>
+
+            <!-- THE BENTO GRID -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                <!-- TILE 1 -->
+                <div class="cambie-card md:col-span-2 p-10 flex flex-col justify-between h-full">
+                    <div>
+                        <span class="text-accent font-sans font-bold text-[10px] uppercase tracking-widest mb-4 block">01. No Middlemen</span>
+                        <!-- Headline Font: Serif -->
+                        <h3 class="text-3xl text-textMain font-serif mb-3">Direct Source Exclusivity</h3>
+                        <!-- Body Font -->
+                        <p class="text-muted text-sm max-w-md font-sans">We generate leads directly. No third-party brokers. You're buying from the source, ensuring higher intent and better contact rates.</p>
+                    </div>
+                    <div class="mt-8 flex gap-2">
+                        <span class="bg-gray-50 border border-border px-3 py-1 text-[10px] text-textMain font-bold uppercase tracking-wider rounded font-sans">Google Ads</span>
+                        <span class="bg-gray-50 border border-border px-3 py-1 text-[10px] text-textMain font-bold uppercase tracking-wider rounded font-sans">Meta API</span>
+                        <span class="bg-gray-50 border border-border px-3 py-1 text-[10px] text-textMain font-bold uppercase tracking-wider rounded font-sans">Native</span>
+                    </div>
+                </div>
+
+                <!-- TILE 2 -->
+                <div class="cambie-card p-10">
+                    <span class="text-accent font-sans font-bold text-[10px] uppercase tracking-widest mb-4 block">02. Predictable</span>
+                    <!-- UPDATED: Headline Font to Serif -->
+                    <h3 class="text-3xl text-textMain font-serif mb-3">Predictable Revenue</h3>
+                    <p class="text-muted text-sm font-sans">Stop guessing your marketing ROI. With a fixed cost per qualified lead, you can forecast revenue and plan capacity.</p>
+                </div>
+
+                <!-- TILE 3 -->
+                <div class="cambie-card p-10">
+                    <span class="text-accent font-sans font-bold text-[10px] uppercase tracking-widest mb-4 block">03. Speed</span>
+                    <!-- UPDATED: Headline Font to Serif -->
+                    <h3 class="text-3xl text-textMain font-serif mb-3">Launch in 5-7 Days</h3>
+                    <p class="text-muted text-sm font-sans">Skip the 4-6 week agency onboarding nightmare. We build campaigns and integrations in under a week.</p>
+                </div>
+
+                <!-- TILE 4 -->
+                <div class="cambie-card md:col-span-2 p-10 flex flex-col md:flex-row items-center gap-8">
+                    <div class="flex-1">
+                        <span class="text-accent font-sans font-bold text-[10px] uppercase tracking-widest mb-4 block">04. Zero Risk</span>
+                        <!-- Headline Font: Serif -->
+                        <h3 class="text-3xl text-textMain font-serif mb-3">Zero Ad Spend Liability</h3>
+                        <p class="text-muted text-sm font-sans">No setup fees. No monthly retainers. No ad spend liability. You only pay for qualified leads, guaranteed.</p>
+                    </div>
+                    <div class="w-full md:w-64 bg-gray-50 border border-border p-6 rounded-lg">
+                        <div class="flex justify-between text-xs text-muted mb-2 font-sans"><span>Agency Fee</span> <span class="line-through decoration-red-400">$5,000</span></div>
+                        <div class="flex justify-between text-xs text-muted mb-4 font-sans"><span>Ad Spend</span> <span class="line-through decoration-red-400">$10,000</span></div>
+                        <div class="h-px bg-border w-full mb-4"></div>
+                        <div class="flex justify-between text-sm text-textMain font-bold font-sans"><span>Your Risk</span> <span class="text-accent">$0.00</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ROW 2 TILES -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                 <div class="cambie-card p-8 flex items-center gap-6">
+                    <div class="p-3 bg-gray-50 rounded-full"><i data-lucide="bar-chart-2" class="text-textMain w-5 h-5"></i></div>
+                    <div>
+                        <!-- UPDATED: Headline Font to Serif -->
+                        <h4 class="text-textMain font-serif text-2xl">Scale On Demand</h4>
+                        <p class="text-muted text-xs mt-1 font-sans">Need 50 leads this week and 500 next? We adjust volume real-time.</p>
+                    </div>
+                </div>
+                 <div class="cambie-card p-8 flex items-center gap-6">
+                    <div class="p-3 bg-gray-50 rounded-full"><i data-lucide="heart-handshake" class="text-textMain w-5 h-5"></i></div>
+                    <div>
+                        <!-- UPDATED: Headline Font to Serif -->
+                        <h4 class="text-textMain font-serif text-2xl">Partnership-Driven</h4>
+                        <p class="text-muted text-xs mt-1 font-sans">We succeed when you succeed. We prioritize long-term relationships.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: HOW IT WORKS -->
+    <section class="py-32 px-6 border-b border-border z-10 relative bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-6">
+                <div>
+                    <h2 class="font-serif text-4xl text-textMain mb-2">Your Next Customer Is Just Three Steps Away</h2>
+                    <p class="text-muted font-sans">You define the target. We deliver the prospect. It's that simple.</p>
+                </div>
+                <a href="#contact" class="text-textMain text-sm border-b border-textMain pb-1 hover:text-accent hover:border-accent transition font-sans font-medium">Start Your Campaign Now &rarr;</a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+                <!-- Line -->
+                <div class="hidden md:block absolute top-6 left-0 w-full h-px bg-border"></div>
+
+                <div class="relative z-10">
+                    <div class="w-12 h-12 bg-white border border-border rounded-full flex items-center justify-center mb-8 mx-auto md:mx-0 shadow-sm">
+                        <span class="font-serif text-xl text-textMain">1</span>
+                    </div>
+                    <!-- Body Font Bold -->
+                    <h3 class="text-lg font-sans font-bold text-textMain mb-3">Set Your Criteria</h3>
+                    <p class="text-sm text-muted leading-relaxed font-sans">Tell us your niche and define your Ideal Customer Profile. We configure filters for location, demographics, budget range, and any custom qualifying questions specific to your business.</p>
+                </div>
+
+                <div class="relative z-10">
+                     <div class="w-12 h-12 bg-white border border-border rounded-full flex items-center justify-center mb-8 mx-auto md:mx-0 shadow-sm">
+                        <span class="font-serif text-xl text-textMain">2</span>
+                    </div>
+                    <!-- Body Font Bold -->
+                    <h3 class="text-lg font-sans font-bold text-textMain mb-3">We Launch & Verify</h3>
+                    <p class="text-sm text-muted leading-relaxed font-sans">Our team deploys custom ad campaigns across major platforms. Every lead undergoes OTP (One-Time Password) verification for phone numbers and double opt-in for email.</p>
+                </div>
+
+                <div class="relative z-10">
+                     <div class="w-12 h-12 bg-white border border-border rounded-full flex items-center justify-center mb-8 mx-auto md:mx-0 shadow-sm">
+                        <span class="font-serif text-xl text-textMain">3</span>
+                    </div>
+                    <!-- Body Font Bold -->
+                    <h3 class="text-lg font-sans font-bold text-textMain mb-3">Receive & Close</h3>
+                    <p class="text-sm text-muted leading-relaxed font-sans">Qualified leads are pushed to your CRM in real-time. You receive complete contact information. You only pay for leads that meet your agreed-upon criteria.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: COMPARISON TABLE -->
+    <section class="py-32 px-6 border-b border-border z-10 relative bg-background" id="comparison">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif text-textMain mb-4">How We Compare to Your Other Options</h2>
+                <p class="text-muted font-sans">Don't settle for expensive agencies or low-quality brokers.</p>
+            </div>
+            
+            <div class="overflow-x-auto border border-border rounded-xl bg-white shadow-card">
+                <table class="w-full text-left border-collapse min-w-[800px]">
+                    <thead>
+                        <tr class="border-b border-border bg-gray-50">
+                            <th class="py-6 px-6 font-sans text-xs uppercase tracking-widest text-muted font-bold w-1/5">Feature</th>
+                            <th class="py-6 px-6 font-sans text-xs uppercase tracking-widest text-textMain font-bold w-1/5 border-x border-border bg-white shadow-sm">SolidlyLeads</th>
+                            <th class="py-6 px-6 font-sans text-xs uppercase tracking-widest text-muted font-medium w-1/5 opacity-70">Traditional Agency</th>
+                            <th class="py-6 px-6 font-sans text-xs uppercase tracking-widest text-muted font-medium w-1/5 opacity-70">Lead Brokers</th>
+                            <th class="py-6 px-6 font-sans text-xs uppercase tracking-widest text-muted font-medium w-1/5 opacity-70">Internal Team</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm font-sans">
+                        <!-- Cost Model -->
+                        <tr class="border-b border-border hover:bg-gray-50 transition-colors">
+                            <td class="py-5 px-6 text-textMain font-semibold">Cost Model</td>
+                            <td class="py-5 px-6 text-textMain font-bold border-x border-border bg-white">Pay Per Qualified Lead</td>
+                            <td class="py-5 px-6 text-muted">High Retainer + % Spend</td>
+                            <td class="py-5 px-6 text-muted">Pay Per Lead (Low Quality)</td>
+                            <td class="py-5 px-6 text-muted">Salary + Benefits + Tools</td>
+                        </tr>
+                        <!-- Risk Factor -->
+                        <tr class="border-b border-border hover:bg-gray-50 transition-colors">
+                            <td class="py-5 px-6 text-textMain font-semibold">Risk Factor</td>
+                            <td class="py-5 px-6 text-textMain font-bold border-x border-border bg-white">Zero Risk (We Pay Ads)</td>
+                            <td class="py-5 px-6 text-muted">High Risk (You Pay Ads)</td>
+                            <td class="py-5 px-6 text-muted">Medium Risk</td>
+                            <td class="py-5 px-6 text-muted">High Risk</td>
+                        </tr>
+                        <!-- Lead Source -->
+                        <tr class="border-b border-border hover:bg-gray-50 transition-colors">
+                            <td class="py-5 px-6 text-textMain font-semibold">Lead Source</td>
+                            <td class="py-5 px-6 text-textMain font-bold border-x border-border bg-white">Direct & Exclusive</td>
+                            <td class="py-5 px-6 text-muted">Custom</td>
+                            <td class="py-5 px-6 text-muted">Resold / Brokered</td>
+                            <td class="py-5 px-6 text-muted">Custom</td>
+                        </tr>
+                        <!-- Lead Quality -->
+                        <tr class="border-b border-border hover:bg-gray-50 transition-colors">
+                            <td class="py-5 px-6 text-textMain font-semibold">Lead Quality</td>
+                            <td class="py-5 px-6 text-textMain font-bold border-x border-border bg-white">High Intent + OTP Verified</td>
+                            <td class="py-5 px-6 text-muted">Variable</td>
+                            <td class="py-5 px-6 text-muted">Low (Cold/Recycled)</td>
+                            <td class="py-5 px-6 text-muted">Variable</td>
+                        </tr>
+                        <!-- Time To Launch -->
+                        <tr class="border-b border-border hover:bg-gray-50 transition-colors">
+                            <td class="py-5 px-6 text-textMain font-semibold">Time To Launch</td>
+                            <td class="py-5 px-6 text-textMain font-bold border-x border-border bg-white">5-7 Days</td>
+                            <td class="py-5 px-6 text-muted">4-6 Weeks</td>
+                            <td class="py-5 px-6 text-muted">Immediate (Junk)</td>
+                            <td class="py-5 px-6 text-muted">6-12 Weeks</td>
+                        </tr>
+                        <!-- Contract Terms -->
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="py-5 px-6 text-textMain font-semibold">Contract Terms</td>
+                            <td class="py-5 px-6 text-textMain font-bold border-x border-border bg-white">Cancel Anytime</td>
+                            <td class="py-5 px-6 text-muted">6-12 Month Minimum</td>
+                            <td class="py-5 px-6 text-muted">Transactional</td>
+                            <td class="py-5 px-6 text-muted">Employment Contract</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: LEAD QUALITY (UNIFIED STYLE) -->
+    <section class="py-32 px-6 border-b border-border z-10 relative">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-serif text-textMain mb-6">How We Ensure Premium Lead Quality</h2>
+            <p class="text-muted text-lg mb-12 max-w-2xl font-sans">Unlike brokers who prioritize volume over quality, we've built our entire process around delivering prospects who are genuinely interested, reachable, and ready to buy.</p>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+                <!-- STAT CARD -->
+                <div class="cambie-card lg:row-span-2 p-10 flex flex-col justify-center items-center text-center h-full">
+                    <span class="font-sans text-[10px] font-bold uppercase text-muted mb-4 tracking-widest">Internal Data Q4 2025</span>
+                    <div class="text-8xl font-serif text-textMain mb-2">78%</div>
+                    <!-- Body Font Bold -->
+                    <p class="text-accent font-sans font-bold uppercase tracking-widest text-xs mb-4">Average Contact Rate</p>
+                    <p class="text-muted text-xs leading-relaxed max-w-xs font-sans">Compared to industry standard 30-40%. Our OTP verification ensures real humans.</p>
+                </div>
+
+                <!-- ITEMS -->
+                <div class="cambie-card p-8">
+                    <!-- Body Font Bold -->
+                    <h3 class="text-textMain font-sans font-bold text-lg mb-2">1. Precision Targeting</h3>
+                    <p class="text-muted text-xs leading-relaxed font-sans">We target your exact customer profile using advanced demographic, psychographic, and behavioral filters across all major advertising platforms. We exclude low-intent audiences.</p>
+                </div>
+                <div class="cambie-card p-8">
+                    <h3 class="text-textMain font-sans font-bold text-lg mb-2">2. Contact Verification</h3>
+                    <p class="text-muted text-xs leading-relaxed font-sans">Every lead undergoes OTP verification for phone numbers and double opt-in confirmation for email addresses. No disconnected lines. No bots.</p>
+                </div>
+                <div class="cambie-card p-8">
+                    <h3 class="text-textMain font-sans font-bold text-lg mb-2">3. Custom Qualification</h3>
+                    <p class="text-muted text-xs leading-relaxed font-sans">We ask your specific qualifying questions upfront—budget, timeline, decision-making authority—so you only speak with ready-to-buy prospects.</p>
+                </div>
+                <div class="cambie-card p-8">
+                    <h3 class="text-textMain font-sans font-bold text-lg mb-2">4. Continuous Optimization</h3>
+                    <p class="text-muted text-xs leading-relaxed font-sans">We monitor your feedback. If a traffic source isn't converting, we cut it immediately. We don't just "set it and forget it."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: INDUSTRIES -->
+    <section class="py-24 px-6 border-b border-border z-10 relative bg-white">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-3xl font-serif text-textMain mb-8">Trusted Across High-Value Industries</h2>
+            
+            <div class="flex flex-wrap justify-center gap-3 font-sans">
+                <span class="px-5 py-2 border border-border rounded-full text-muted text-sm hover:border-textMain hover:text-textMain transition-colors cursor-default bg-background font-medium">Motor Vehicle Accidents (MVA)</span>
+                <span class="px-5 py-2 border border-border rounded-full text-muted text-sm hover:border-textMain hover:text-textMain transition-colors cursor-default bg-background font-medium">Personal Injury Law</span>
+                <span class="px-5 py-2 border border-border rounded-full text-muted text-sm hover:border-textMain hover:text-textMain transition-colors cursor-default bg-background font-medium">Life Insurance</span>
+                <span class="px-5 py-2 border border-border rounded-full text-muted text-sm hover:border-textMain hover:text-textMain transition-colors cursor-default bg-background font-medium">Tax Resolution</span>
+                <span class="px-5 py-2 border border-border rounded-full text-muted text-sm hover:border-textMain hover:text-textMain transition-colors cursor-default bg-background font-medium">Gold IRA</span>
+                <span class="px-5 py-2 border border-border rounded-full text-muted text-sm hover:border-textMain hover:text-textMain transition-colors cursor-default bg-background font-medium">Credit & Debt Services</span>
+                <span class="px-5 py-2 border border-border rounded-full text-muted text-sm hover:border-textMain hover:text-textMain transition-colors cursor-default bg-background font-medium">Home Services</span>
+                <span class="px-5 py-2 border border-border rounded-full text-muted text-sm hover:border-textMain hover:text-textMain transition-colors cursor-default bg-background font-medium">Financial Services</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: FAQ -->
+    <section class="py-32 px-6 z-10 relative bg-background" id="faq">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-4xl font-serif text-center mb-16 text-textMain">Your Questions Answered</h2>
+            
+            <div class="space-y-4 font-sans">
+                <details class="group faq-item bg-white border border-border rounded-lg open:shadow-md transition-all">
+                    <summary class="flex justify-between items-center cursor-pointer p-6 list-none text-textMain font-bold">
+                        <span>How much does it cost?</span>
+                        <span class="transition group-open:rotate-45 text-muted">+</span>
+                    </summary>
+                    <div class="px-6 pb-6 text-muted text-sm leading-relaxed">
+                        Pricing varies based on industry and volume. You never pay a retainer. You only pay a fixed cost per qualified lead.<br><br>
+                        Examples:<br>
+                        • MVA leads: $150-$300<br>
+                        • Debt relief: $40-$80<br>
+                        • Home services: $25-$75<br>
+                        Contact us for a customized quote.
+                    </div>
+                </details>
+
+                <details class="group faq-item bg-white border border-border rounded-lg open:shadow-md transition-all">
+                    <summary class="flex justify-between items-center cursor-pointer p-6 list-none text-textMain font-bold">
+                        <span>How do I know the leads are actually qualified?</span>
+                        <span class="transition group-open:rotate-45 text-muted">+</span>
+                    </summary>
+                    <div class="px-6 pb-6 text-muted text-sm leading-relaxed">
+                        Quality is our #1 priority. Every lead goes through OTP contact verification, custom qualification questions, and real-time data validation. Plus, you provide ongoing feedback that we use to optimize targeting. If a lead doesn't meet criteria, you don't pay.
+                    </div>
+                </details>
+
+                <details class="group faq-item bg-white border border-border rounded-lg open:shadow-md transition-all">
+                    <summary class="flex justify-between items-center cursor-pointer p-6 list-none text-textMain font-bold">
+                        <span>Why are you better than big lead vendors?</span>
+                        <span class="transition group-open:rotate-45 text-muted">+</span>
+                    </summary>
+                    <div class="px-6 pb-6 text-muted text-sm leading-relaxed">
+                        Big vendors are "aggregators" who resell recycled data to 5+ companies. We are the SOURCE. We run the ads directly. Every lead is fresh, exclusive to you, and generated minutes before delivery. Contact rates are typically 2x higher than broker leads.
+                    </div>
+                </details>
+
+                <details class="group faq-item bg-white border border-border rounded-lg open:shadow-md transition-all">
+                    <summary class="flex justify-between items-center cursor-pointer p-6 list-none text-textMain font-bold">
+                        <span>Is there a minimum order or long-term contract?</span>
+                        <span class="transition group-open:rotate-45 text-muted">+</span>
+                    </summary>
+                    <div class="px-6 pb-6 text-muted text-sm leading-relaxed">
+                        No long-term contracts. Start with a pilot batch (25-50 leads). If satisfied, scale up. If not, cancel anytime. No penalties.
+                    </div>
+                </details>
+
+                <details class="group faq-item bg-white border border-border rounded-lg open:shadow-md transition-all">
+                    <summary class="flex justify-between items-center cursor-pointer p-6 list-none text-textMain font-bold">
+                        <span>How quickly can we get started?</span>
+                        <span class="transition group-open:rotate-45 text-muted">+</span>
+                    </summary>
+                    <div class="px-6 pb-6 text-muted text-sm leading-relaxed">
+                         We can launch in 5-7 days. Day 1: Strategy. Days 2-4: Build. Days 5-6: Testing. Day 7: Launch.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 9: FINAL CTA (CALENDLY EMBED) -->
+    <section class="py-32 px-6 border-t border-border z-10 relative bg-brand text-white" id="contact">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            
+            <div class="sticky top-24">
+                <span class="text-white/70 font-sans font-bold text-xs uppercase tracking-widest block mb-6">Stop Wasting Money</span>
+                <h2 class="text-5xl md:text-6xl font-serif text-white mb-6">Ready to Fill Your Pipeline with Qualified Prospects?</h2>
+                <p class="text-white/70 text-lg mb-8 font-sans">No retainers. No guesswork. No risk. Just high-intent leads delivered to your inbox starting in 5-7 days.</p>
+                
+                <div class="space-y-4 font-sans text-sm text-white/80">
+                    <div class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-accent rounded-full"></span> No credit card required</div>
+                    <div class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-accent rounded-full"></span> Cancel anytime</div>
+                    <div class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-accent rounded-full"></span> Launch in 5-7 days</div>
+                </div>
+            </div>
+
+            <!-- CALENDLY EMBED -->
+            <div class="bg-white border border-border rounded-lg overflow-hidden shadow-2xl relative">
+                <!-- Calendly inline widget begin -->
+                <div class="calendly-inline-widget" data-url="https://calendly.com/sssolt750/30min" style="min-width:320px;height:700px;"></div>
+                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                <!-- Calendly inline widget end -->
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 px-6 border-t border-border bg-background z-10 relative">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <span class="font-serif text-2xl text-textMain">SolidlyLeads</span>
+            <div class="flex flex-wrap justify-center gap-8 text-[10px] font-sans font-bold text-muted uppercase tracking-widest">
+                <a href="about.html" class="hover:text-textMain transition-colors">About Us</a>
+                <a href="privacy.html" class="hover:text-textMain transition-colors">Privacy</a>
+                <a href="terms.html" class="hover:text-textMain transition-colors">Terms</a>
+                <a href="refund.html" class="hover:text-textMain transition-colors">Refund Policy</a>
+                <a href="#contact" class="hover:text-textMain transition-colors">Contact</a>
+            </div>
+            <div class="text-[10px] font-sans text-muted font-medium">
+                © 2026 SolidlyLeads. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
