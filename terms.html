@@ -1,86 +1,181 @@
 <!DOCTYPE html>
-<html lang="en" class="antialiased selection:bg-blue-600 selection:text-white">
+<html lang="en" class="antialiased">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service | SolidlyLeads</title>
-    
+    <title>Terms of Service | SolidlyLeads Roofing Leads</title>
+    <meta name="description" content="Terms of Service for SolidlyLeads roofing lead generation services.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        background: '#F9FAFB',
-                        surface: '#FFFFFF',
-                        border: '#E2E8F0',
-                        brand: '#0F172A',
-                        accent: '#2563EB',
-                        muted: '#64748B',
-                        textMain: '#0F172A',
+                        paper: '#F7F4EE',
+                        porcelain: '#FFFEFA',
+                        ink: '#1B2421',
+                        muted: '#66736D',
+                        line: '#DDD7CD',
+                        moss: '#2F6B57',
+                        pine: '#183E34',
+                        clay: '#B96F45',
+                        amber: '#D9A441',
+                        storm: '#384348',
                     },
                     fontFamily: {
-                        serif: ['Instrument Serif', 'serif'],
-                        sans: ['Inter', 'sans-serif'],
+                        sans: ['Manrope', 'sans-serif'],
+                        serif: ['Source Serif 4', 'serif'],
+                    },
+                    boxShadow: {
+                        soft: '0 18px 50px rgba(27, 36, 33, 0.08)',
+                        tight: '0 10px 24px rgba(27, 36, 33, 0.08)',
                     }
                 }
             }
         }
     </script>
+
+    <style>
+        * { letter-spacing: 0 !important; }
+        body { background: #F7F4EE; color: #1B2421; font-family: Manrope, sans-serif; }
+        .page-shell {
+            background-color: #F7F4EE;
+            position: relative;
+            overflow: hidden;
+        }
+        .page-shell::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='520' height='520' viewBox='0 0 520 520' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23DCD6CA' stroke-width='1.1' opacity='0.58'%3E%3Cpath d='M29 86c36-42 108-62 158-30 54 35 56 111 109 146 53 36 127 6 165 52 32 39 12 102-28 131-50 37-120 13-172 43-43 25-58 83-108 91-45 7-88-26-104-68-18-47 4-91-20-134-23-41-77-59-80-106-3-44 53-79 80-125Z'/%3E%3Cpath d='M73 104c32-29 83-42 122-18 43 27 47 88 90 116 45 29 105 4 136 41 27 32 10 82-23 106-41 31-99 10-143 35-36 21-47 68-88 74-36 5-72-22-84-56-15-39 4-75-16-110-19-34-63-49-65-87-2-36 49-75 71-101Z'/%3E%3Cpath d='M122 132c25-18 57-24 85-7 32 20 36 65 69 86 35 22 79 5 104 33 21 24 7 62-18 80-31 23-75 8-109 27-27 15-36 51-67 55-27 4-53-17-62-42-11-29 3-56-12-82-14-25-48-36-50-64-1-27 43-67 60-86Z'/%3E%3Cpath d='M338 14c44 25 66 68 58 110-8 43-48 65-37 102 12 40 69 51 80 93 9 34-17 74-52 85-43 14-71-28-118-14-42 12-48 55-88 59-33 4-69-20-78-53-10-38 22-62 13-103-8-37-39-43-45-78-7-39 22-81 60-93 41-13 72 18 112 0 40-18 45-73 95-108Z'/%3E%3C/g%3E%3C/svg%3E");
+            background-size: 520px 520px;
+            opacity: 0.42;
+            pointer-events: none;
+        }
+        .nav-shell {
+            border: 1px solid rgba(255,255,255,0.16);
+            background: rgba(27,36,33,0.96);
+            backdrop-filter: blur(18px);
+        }
+        .policy-card {
+            border: 1px solid #DDD7CD;
+            border-radius: 8px;
+            background: rgba(255, 254, 250, 0.94);
+            box-shadow: 0 18px 50px rgba(27, 36, 33, 0.08);
+        }
+        .policy-content h2 {
+            margin-top: 2.5rem;
+            margin-bottom: 0.75rem;
+            color: #1B2421;
+            font-size: 1.25rem;
+            font-weight: 800;
+        }
+        .policy-content p,
+        .policy-content li {
+            color: #66736D;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+        .policy-content p { margin-bottom: 1rem; }
+        .policy-content ul {
+            margin: 0.5rem 0 1.25rem;
+            padding-left: 1.25rem;
+            list-style: disc;
+        }
+        .policy-content strong { color: #1B2421; font-weight: 800; }
+    </style>
 </head>
-<body class="bg-background text-textMain font-sans">
+<body class="overflow-x-hidden">
 
-    <div class="bg-white border-b border-border py-6">
-        <div class="max-w-4xl mx-auto px-4 flex justify-between items-center">
-            <a href="index.html" class="font-serif text-2xl tracking-tight text-textMain">SolidlyLeads</a>
-            <a href="index.html" class="text-xs font-bold uppercase tracking-widest text-muted hover:text-textMain">Back to Home</a>
-        </div>
-    </div>
-
-    <div class="max-w-3xl mx-auto px-4 py-16">
-        <h1 class="text-5xl font-serif text-textMain mb-4">Terms of Service</h1>
-        <p class="text-sm text-muted mb-10 uppercase tracking-widest font-bold">Last Updated: January 13, 2026</p>
-        
-        <div class="prose prose-lg text-muted leading-relaxed text-sm">
-            <h3 class="text-xl font-bold text-textMain mt-8 mb-3">1. Agreement to Terms</h3>
-            <p class="mb-4">These Terms of Service constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you") and Venith Emmerce LLC, doing business as SolidlyLeads ("Company," "we," "us," or "our"), concerning your access to and use of the SolidlyLeads website (the "Site") as well as the lead generation and performance marketing services provided by the Company. By purchasing our leads, you agree to be bound by all of these Terms of Service.</p>
-
-            <h3 class="text-xl font-bold text-textMain mt-8 mb-3">2. Service Description</h3>
-            <p class="mb-4">SolidlyLeads provides advertising management and lead generation services. We generate traffic through digital channels (Search, Social, Native) and deliver contact information of individuals ("Leads") who have expressed interest in your services. We are not a publisher; we are a direct media buyer.</p>
-
-            <h3 class="text-xl font-bold text-textMain mt-8 mb-3">3. Lead Delivery and Usage</h3>
-            <p class="mb-4">Upon purchase, you are granted a non-transferable license to contact the Leads delivered to you. You agree that:</p>
-            <ul class="list-disc pl-5 mb-4 space-y-2">
-                <li>You will contact leads in compliance with all applicable laws, including the Telephone Consumer Protection Act (TCPA) and CAN-SPAM Act.</li>
-                <li>You will not resell, distribute, or share the lead data with third parties.</li>
-                <li>You acknowledge that while we verify contact information, we cannot guarantee conversion or sales results.</li>
-            </ul>
-
-            <h3 class="text-xl font-bold text-textMain mt-8 mb-3">4. Fees and Payment</h3>
-            <p class="mb-4">We operate on a "Pay Per Lead" or "Lead Package" basis. You agree to pay all fees associated with the packages you select. There are no monthly retainers. Payments are processed securely via Stripe. In the event of a chargeback dispute, we reserve the right to terminate your account and provide evidence of lead delivery to the financial institution.</p>
-
-            <h3 class="text-xl font-bold text-textMain mt-8 mb-3">5. Disclaimer</h3>
-            <p class="mb-4 uppercase text-xs font-bold">THE SITE AND SERVICES ARE PROVIDED ON AN AS-IS AND AS-AVAILABLE BASIS. YOU AGREE THAT YOUR USE OF THE SITE AND OUR SERVICES WILL BE AT YOUR SOLE RISK. TO THE FULLEST EXTENT PERMITTED BY LAW, WE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, IN CONNECTION WITH THE SITE AND SERVICES AND YOUR USE THEREOF.</p>
-
-            <h3 class="text-xl font-bold text-textMain mt-8 mb-3">6. Limitation of Liability</h3>
-            <p class="mb-4">IN NO EVENT WILL WE BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY DIRECT, INDIRECT, CONSEQUENTIAL, EXEMPLARY, INCIDENTAL, SPECIAL, OR PUNITIVE DAMAGES, INCLUDING LOST PROFIT, LOST REVENUE, LOSS OF DATA, OR OTHER DAMAGES ARISING FROM YOUR USE OF THE SERVICES. OUR LIABILITY WILL AT ALL TIMES BE LIMITED TO THE AMOUNT PAID, IF ANY, BY YOU TO US DURING THE ONE (1) MONTH PERIOD PRIOR TO ANY CAUSE OF ACTION ARISING.</p>
-
-            <h3 class="text-xl font-bold text-textMain mt-8 mb-3">7. Governing Law</h3>
-            <p class="mb-4">These Terms of Service and your use of the Site and Services are governed by and construed in accordance with the laws of the State of Wyoming applicable to agreements made and to be entirely performed within the State of Wyoming, without regard to its conflict of law principles.</p>
-
-            <h3 class="text-xl font-bold text-textMain mt-8 mb-3">8. Contact Us</h3>
-            <p class="mb-4">In order to resolve a complaint regarding the Site or Services or to receive further information regarding use of the Services, please contact us at:</p>
-            <div class="bg-white p-6 rounded-xl border border-border">
-                <p class="font-bold text-textMain">Venith Emmerce LLC</p>
-                <p>30 N Gould St Ste R</p>
-                <p>Sheridan, WY 82801</p>
-                <p>Email: hello@venithemmerce.com</p>
+    <nav class="fixed left-0 right-0 top-0 z-50 px-4 pt-5">
+        <div class="nav-shell mx-auto flex max-w-[1500px] items-center justify-between rounded-full px-5 py-3 text-white shadow-tight">
+            <a href="index.html" class="font-serif text-2xl font-semibold">SolidlyLeads</a>
+            <div class="hidden items-center gap-7 text-sm font-semibold text-white/76 md:flex">
+                <a href="index.html#lead-types" class="hover:text-white">Lead Types</a>
+                <a href="index.html#quality" class="hover:text-white">Quality</a>
+                <a href="index.html#compare" class="hover:text-white">Compare</a>
+                <a href="index.html#faq" class="hover:text-white">FAQ</a>
             </div>
+            <a href="index.html#contact" class="hidden items-center gap-2 rounded-full bg-white px-5 py-2 text-sm font-extrabold text-ink transition hover:bg-paper sm:inline-flex">
+                <i data-lucide="calendar-check" class="h-4 w-4"></i>
+                Book Call
+            </a>
         </div>
-    </div>
+    </nav>
+
+    <main class="page-shell px-5 pb-20 pt-32">
+        <section class="relative z-10 mx-auto max-w-4xl">
+            <div class="mb-7 inline-flex items-center gap-2 rounded-full border border-line bg-porcelain px-4 py-2 text-xs font-extrabold uppercase text-ink shadow-tight">
+                <span class="h-2 w-2 rounded-full bg-amber"></span>
+                Legal
+            </div>
+            <h1 class="font-serif text-5xl font-semibold leading-none text-ink md:text-7xl">Terms of Service</h1>
+            <p class="mt-5 text-sm font-extrabold uppercase text-moss">Last Updated: January 13, 2026</p>
+        </section>
+
+        <section class="policy-card relative z-10 mx-auto mt-10 max-w-4xl p-7 md:p-10">
+            <div class="policy-content">
+                <h2>1. Agreement to Terms</h2>
+                <p>These Terms of Service constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you") and Venith Emmerce LLC, doing business as SolidlyLeads ("Company," "we," "us," or "our"), concerning your access to and use of the SolidlyLeads website (the "Site") as well as the lead generation and performance marketing services provided by the Company. By purchasing our leads, you agree to be bound by all of these Terms of Service.</p>
+
+                <h2>2. Service Description</h2>
+                <p>SolidlyLeads provides advertising management and lead generation services. We generate traffic through digital channels and deliver contact information of individuals ("Leads") who have expressed interest in your services. We are not a publisher; we are a direct media buyer.</p>
+
+                <h2>3. Lead Delivery and Usage</h2>
+                <p>Upon purchase, you are granted a non-transferable license to contact the Leads delivered to you. You agree that:</p>
+                <ul>
+                    <li>You will contact leads in compliance with all applicable laws, including the Telephone Consumer Protection Act (TCPA) and CAN-SPAM Act.</li>
+                    <li>You will not resell, distribute, or share the lead data with third parties.</li>
+                    <li>You acknowledge that while we verify contact information, we cannot guarantee conversion or sales results.</li>
+                </ul>
+
+                <h2>4. Fees and Payment</h2>
+                <p>We operate on a "Pay Per Lead" or "Lead Package" basis. You agree to pay all fees associated with the packages you select. There are no monthly retainers. Payments are processed securely via Stripe. In the event of a chargeback dispute, we reserve the right to terminate your account and provide evidence of lead delivery to the financial institution.</p>
+
+                <h2>5. Disclaimer</h2>
+                <p><strong>THE SITE AND SERVICES ARE PROVIDED ON AN AS-IS AND AS-AVAILABLE BASIS.</strong> YOU AGREE THAT YOUR USE OF THE SITE AND OUR SERVICES WILL BE AT YOUR SOLE RISK. TO THE FULLEST EXTENT PERMITTED BY LAW, WE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, IN CONNECTION WITH THE SITE AND SERVICES AND YOUR USE THEREOF.</p>
+
+                <h2>6. Limitation of Liability</h2>
+                <p>IN NO EVENT WILL WE BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY DIRECT, INDIRECT, CONSEQUENTIAL, EXEMPLARY, INCIDENTAL, SPECIAL, OR PUNITIVE DAMAGES, INCLUDING LOST PROFIT, LOST REVENUE, LOSS OF DATA, OR OTHER DAMAGES ARISING FROM YOUR USE OF THE SERVICES. OUR LIABILITY WILL AT ALL TIMES BE LIMITED TO THE AMOUNT PAID, IF ANY, BY YOU TO US DURING THE ONE (1) MONTH PERIOD PRIOR TO ANY CAUSE OF ACTION ARISING.</p>
+
+                <h2>7. Governing Law</h2>
+                <p>These Terms of Service and your use of the Site and Services are governed by and construed in accordance with the laws of the State of Wyoming applicable to agreements made and to be entirely performed within the State of Wyoming, without regard to its conflict of law principles.</p>
+
+                <h2>8. Contact Us</h2>
+                <p>In order to resolve a complaint regarding the Site or Services or to receive further information regarding use of the Services, please contact us at:</p>
+                <div class="mt-5 rounded-lg border border-line bg-paper p-6">
+                    <p><strong>Venith Emmerce LLC</strong></p>
+                    <p>30 N Gould St Ste R</p>
+                    <p>Sheridan, WY 82801</p>
+                    <p>Email: hello@venithemmerce.com</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-line bg-porcelain px-5 py-10">
+        <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 md:flex-row">
+            <a href="index.html" class="font-serif text-2xl font-semibold text-ink">SolidlyLeads</a>
+            <div class="flex flex-wrap justify-center gap-6 text-sm font-bold text-muted">
+                <a href="about.html" class="hover:text-ink">About</a>
+                <a href="privacy.html" class="hover:text-ink">Privacy</a>
+                <a href="terms.html" class="text-ink">Terms</a>
+                <a href="refund.html" class="hover:text-ink">Refund Policy</a>
+                <a href="index.html#contact" class="hover:text-ink">Contact</a>
+            </div>
+            <div class="text-sm text-muted">Copyright 2026 SolidlyLeads. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
