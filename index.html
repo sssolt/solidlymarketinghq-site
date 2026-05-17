@@ -1,577 +1,657 @@
 <!DOCTYPE html>
-<html lang="en" class="antialiased selection:bg-blue-600 selection:text-white">
+<html lang="en" class="antialiased">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SolidlyLeads | Exclusive Leads for Law Firms</title>
-    
-    <!-- Typography: Instrument Serif (Headings) & Inter (Body) -->
+    <title>SolidlyLeads | Qualified Roofing Leads</title>
+    <meta name="description" content="SolidlyLeads helps roofing companies buy qualified roofing leads without fixed monthly retainers or shared-lead marketplaces.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        background: '#F9FAFB', /* Very light gray */
-                        surface: '#FFFFFF',    /* Pure white cards */
-                        border: '#E2E8F0',     /* Light slate border */
-                        brand: '#0F172A',      /* Deep Navy/Black for primary actions */
-                        accent: '#2563EB',     /* Mature Royal Blue for small ticks/highlights */
-                        muted: '#64748B',      /* Slate text */
-                        textMain: '#0F172A',   /* Nearly black text */
+                        paper: '#F7F4EE',
+                        porcelain: '#FFFEFA',
+                        ink: '#1B2421',
+                        muted: '#66736D',
+                        line: '#DDD7CD',
+                        moss: '#2F6B57',
+                        pine: '#183E34',
+                        clay: '#B96F45',
+                        amber: '#D9A441',
+                        storm: '#384348',
                     },
                     fontFamily: {
-                        serif: ['Instrument Serif', 'serif'],
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    backgroundImage: {
-                        'grid-pattern': "linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px)",
+                        sans: ['Manrope', 'sans-serif'],
+                        serif: ['Source Serif 4', 'serif'],
                     },
                     boxShadow: {
-                        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02)',
-                        'card-hover': '0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02)',
+                        soft: '0 18px 50px rgba(27, 36, 33, 0.08)',
+                        tight: '0 10px 24px rgba(27, 36, 33, 0.08)',
                     }
                 }
             }
         }
     </script>
-    
+
     <style>
+        * { letter-spacing: 0 !important; }
+        html { scroll-behavior: smooth; }
         body {
-            background-color: #F9FAFB;
-            color: #0F172A;
+            background: #F7F4EE;
+            color: #1B2421;
+            font-family: Manrope, sans-serif;
         }
-
-        /* LIGHT GRID BACKGROUND */
-        .technical-grid {
-            position: absolute; inset: 0; pointer-events: none;
-            background-size: 40px 40px;
-            background-image: var(--tw-gradient-grid-pattern);
-            mask-image: linear-gradient(to bottom, black 40%, transparent 95%);
-        }
-
-        /* CAMBIE-STYLE CLEAN TILES */
-        .cambie-card {
-            background-color: #FFFFFF;
-            border: 1px solid #E2E8F0;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+        .roof-hero {
+            background-color: #F7F4EE;
             position: relative;
             overflow: hidden;
         }
-
-        .cambie-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.01);
-            border-color: #CBD5E1;
+        .roof-hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='520' height='520' viewBox='0 0 520 520' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23DCD6CA' stroke-width='1.1' opacity='0.58'%3E%3Cpath d='M29 86c36-42 108-62 158-30 54 35 56 111 109 146 53 36 127 6 165 52 32 39 12 102-28 131-50 37-120 13-172 43-43 25-58 83-108 91-45 7-88-26-104-68-18-47 4-91-20-134-23-41-77-59-80-106-3-44 53-79 80-125Z'/%3E%3Cpath d='M73 104c32-29 83-42 122-18 43 27 47 88 90 116 45 29 105 4 136 41 27 32 10 82-23 106-41 31-99 10-143 35-36 21-47 68-88 74-36 5-72-22-84-56-15-39 4-75-16-110-19-34-63-49-65-87-2-36 49-75 71-101Z'/%3E%3Cpath d='M122 132c25-18 57-24 85-7 32 20 36 65 69 86 35 22 79 5 104 33 21 24 7 62-18 80-31 23-75 8-109 27-27 15-36 51-67 55-27 4-53-17-62-42-11-29 3-56-12-82-14-25-48-36-50-64-1-27 43-67 60-86Z'/%3E%3Cpath d='M338 14c44 25 66 68 58 110-8 43-48 65-37 102 12 40 69 51 80 93 9 34-17 74-52 85-43 14-71-28-118-14-42 12-48 55-88 59-33 4-69-20-78-53-10-38 22-62 13-103-8-37-39-43-45-78-7-39 22-81 60-93 41-13 72 18 112 0 40-18 45-73 95-108Z'/%3E%3C/g%3E%3C/svg%3E");
+            background-size: 520px 520px;
+            opacity: 0.42;
+            pointer-events: none;
         }
-
-        /* FAQ ANIMATION */
-        .faq-item[open] summary ~ * { animation: sweep .3s ease-in-out; }
-        @keyframes sweep { 0% {opacity: 0; margin-top: -10px} 100% {opacity: 1; margin-top: 10px}}
-        
-        /* SCROLL ANIMATION */
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+        .section-kicker {
+            color: #2F6B57;
+            font-size: 0.74rem;
+            font-weight: 800;
+            text-transform: uppercase;
         }
-        .animate-scroll {
-            display: flex;
-            width: max-content;
-            animation: scroll 60s linear infinite;
+        .work-card {
+            border: 1px solid #DDD7CD;
+            border-radius: 8px;
+            background: #FFFEFA;
+            box-shadow: 0 10px 24px rgba(27, 36, 33, 0.05);
         }
-
-        /* SCROLLBAR */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #F9FAFB; }
-        ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 3px; }
+        .icon-tile {
+            width: 44px;
+            height: 44px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #EAF2ED;
+            color: #2F6B57;
+        }
+        .nav-shell {
+            border: 1px solid rgba(255,255,255,0.16);
+            background: rgba(27,36,33,0.96);
+            backdrop-filter: blur(18px);
+        }
+        .system-card {
+            border: 1px solid rgba(27, 36, 33, 0.09);
+            background: rgba(255, 254, 250, 0.94);
+            border-radius: 8px;
+            box-shadow: 0 22px 60px rgba(27, 36, 33, 0.15);
+            backdrop-filter: blur(16px);
+        }
+        .photo-card {
+            border: 8px solid rgba(255, 254, 250, 0.92);
+            border-radius: 10px;
+            box-shadow: 0 28px 70px rgba(27, 36, 33, 0.18);
+            overflow: hidden;
+        }
+        .map-card {
+            background:
+                linear-gradient(rgba(47,107,87,0.12), rgba(47,107,87,0.12)),
+                linear-gradient(90deg, rgba(27,36,33,0.07) 1px, transparent 1px),
+                linear-gradient(0deg, rgba(27,36,33,0.07) 1px, transparent 1px),
+                #F0F3EE;
+            background-size: auto, 32px 32px, 32px 32px, auto;
+        }
+        .map-card img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.94;
+            transform: scale(1.17);
+            transform-origin: center;
+        }
+        .mobile-system-card {
+            box-shadow: 0 14px 36px rgba(27, 36, 33, 0.12);
+        }
+        .mobile-photo-card {
+            border-width: 5px;
+            box-shadow: 0 18px 45px rgba(27, 36, 33, 0.16);
+        }
+        .faq-item[open] summary ~ div {
+            animation: reveal 0.24s ease;
+        }
+        @keyframes reveal {
+            from { opacity: 0; transform: translateY(-4px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body class="overflow-x-hidden">
 
-    <!-- Global Background Elements -->
-    <div class="fixed inset-0 bg-grid-pattern technical-grid z-0"></div>
-
-    <!-- NAVIGATION -->
-    <nav class="fixed top-0 left-0 right-0 z-50 flex justify-center pt-6 px-6">
-        <div class="bg-white/80 backdrop-blur-md border border-border rounded-full px-6 py-3 flex items-center gap-8 shadow-sm">
-            <a href="index.html" class="font-serif text-2xl tracking-tight text-textMain">SolidlyLeads</a>
-            <div class="hidden md:flex items-center gap-8 text-[13px] font-sans font-medium tracking-wide">
-                <a href="#problem" class="text-muted hover:text-textMain transition-colors">Problem</a>
-                <a href="#solution" class="text-muted hover:text-textMain transition-colors">Solution</a>
-                <a href="#comparison" class="text-muted hover:text-textMain transition-colors">Compare</a>
-                <a href="#faq" class="text-muted hover:text-textMain transition-colors">FAQ</a>
+    <nav class="fixed left-0 right-0 top-0 z-50 px-4 pt-5">
+        <div class="nav-shell mx-auto flex max-w-[1500px] items-center justify-between rounded-full px-5 py-3 text-white shadow-tight">
+            <a href="index.html" class="font-serif text-2xl font-semibold">SolidlyLeads</a>
+            <div class="hidden items-center gap-7 text-sm font-semibold text-white/76 md:flex">
+                <a href="#lead-types" class="hover:text-white">Lead Types</a>
+                <a href="#quality" class="hover:text-white">Quality</a>
+                <a href="#compare" class="hover:text-white">Compare</a>
+                <a href="#faq" class="hover:text-white">FAQ</a>
             </div>
-            <a href="#contact" class="hidden md:block bg-brand text-white text-xs font-semibold tracking-widest px-6 py-2.5 rounded-full hover:bg-black transition-colors">
-                Get Leads
+            <a href="#contact" class="hidden items-center gap-2 rounded-full bg-white px-5 py-2 text-sm font-extrabold text-ink transition hover:bg-paper sm:inline-flex">
+                <i data-lucide="calendar-check" class="h-4 w-4"></i>
+                Book Call
             </a>
         </div>
     </nav>
 
-    <!-- SECTION 1: HERO -->
-    <section class="relative min-h-screen flex flex-col justify-center items-center pt-32 pb-20 border-b border-border overflow-hidden z-10">
-        
-        <div class="relative z-10 text-center max-w-4xl px-6">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-white text-textMain text-[10px] font-sans font-semibold uppercase tracking-[0.1em] mb-8 shadow-sm">
-                <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
-                Accepting New Partners Q1 2026
-            </div>
-
-            <!-- Headline Font (Instrument Serif) -->
-            <h1 class="text-6xl md:text-8xl font-serif text-textMain leading-[1] tracking-tight mb-8">
-                High-Intent Leads.<br>
-                100% Exclusive.<br>
-                <span class="text-textMain opacity-60">Built For Law Firms.</span>
-            </h1>
-
-            <p class="text-lg text-muted font-normal max-w-xl mx-auto mb-12 leading-relaxed font-sans">
-                Stop gambling with marketing agencies and recycled broker data. We generate our own traffic to deliver authenticated, real-time leads exclusively for law firms.
-            </p>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12 max-w-4xl mx-auto font-sans w-full">
-                <div class="flex flex-col items-center p-4 border-r border-border last:border-0">
-                    <!-- Bold Body Font (Inter) for subheads -->
-                    <strong class="text-textMain font-bold text-sm mb-1">Pay Per Qualified Lead</strong>
-                    <span class="text-xs text-muted">No retainers, no setup fees</span>
+    <header class="roof-hero px-5 pb-16 pt-32 lg:min-h-screen lg:pb-20">
+        <div class="relative z-10 mx-auto grid max-w-[1500px] gap-12 lg:min-h-[calc(100vh-9rem)] lg:grid-cols-[1.08fr_0.92fr] lg:items-start">
+            <div>
+                <div class="mb-7 inline-flex items-center gap-2 rounded-full border border-line bg-porcelain px-4 py-2 text-xs font-extrabold uppercase text-ink shadow-tight">
+                    <span class="h-2 w-2 rounded-full bg-amber"></span>
+                    Territory-based roofing leads
                 </div>
-                <div class="flex flex-col items-center p-4 border-r border-border last:border-0">
-                    <strong class="text-textMain font-bold text-sm mb-1">Direct Source Quality</strong>
-                    <span class="text-xs text-muted">We aren't brokers—we run ads</span>
-                </div>
-                <div class="flex flex-col items-center p-4">
-                    <strong class="text-textMain font-bold text-sm mb-1">Ready in 5-7 Days</strong>
-                    <span class="text-xs text-muted">Launch custom campaigns fast</span>
-                </div>
-            </div>
-
-            <div class="flex flex-col items-center gap-4">
-                <a href="#contact" class="px-8 py-3.5 bg-brand text-white font-sans font-semibold text-sm tracking-wide rounded hover:bg-black transition-colors shadow-lg shadow-blue-900/10">
-                    Get Qualified Leads
-                </a>
-                <span class="text-[10px] uppercase tracking-widest text-muted">No credit card required for consultation</span>
-            </div>
-        </div>
-
-        <!-- Trust Strip (Infinite Loop Fixed) -->
-        <div class="absolute bottom-0 w-full border-t border-border bg-white/50 backdrop-blur-sm py-6 overflow-hidden">
-            <div class="flex justify-center whitespace-nowrap overflow-hidden">
-                <div class="animate-scroll opacity-60">
-                    <span class="text-xs font-sans font-medium text-muted uppercase tracking-[0.15em] mx-12">Trusted by law firms in: Personal Injury • Motor Vehicle Accidents • Workplace Injury • Immigration Defense • Mass Tort • Criminal Defense • Family Law • Employment Law</span>
-                    <span class="text-xs font-sans font-medium text-muted uppercase tracking-[0.15em] mx-12">Trusted by law firms in: Personal Injury • Motor Vehicle Accidents • Workplace Injury • Immigration Defense • Mass Tort • Criminal Defense • Family Law • Employment Law</span>
-                    <!-- Duplicated for seamless loop -->
-                    <span class="text-xs font-sans font-medium text-muted uppercase tracking-[0.15em] mx-12">Trusted by law firms in: Personal Injury • Motor Vehicle Accidents • Workplace Injury • Immigration Defense • Mass Tort • Criminal Defense • Family Law • Employment Law</span>
-                    <span class="text-xs font-sans font-medium text-muted uppercase tracking-[0.15em] mx-12">Trusted by law firms in: Personal Injury • Motor Vehicle Accidents • Workplace Injury • Immigration Defense • Mass Tort • Criminal Defense • Family Law • Employment Law</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 2: THE PROBLEM -->
-    <section class="py-32 px-6 border-b border-border z-10 relative bg-white" id="problem">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-20">
-                <span class="text-accent font-sans font-bold text-[10px] uppercase tracking-[0.2em] mb-4 block">The Problem</span>
-                <h2 class="text-5xl font-serif text-textMain mb-6">Why Most Law Firms Waste Money on Marketing</h2>
-                <p class="text-muted text-lg max-w-2xl mx-auto font-sans">
-                    Running your own lead generation campaigns is a gamble. You're constantly testing, burning budget, and hoping something works—with no guarantee of results.
+                <h1 class="max-w-[22.8rem] font-serif text-[3.05rem] font-semibold leading-[0.96] text-ink sm:max-w-3xl sm:text-6xl sm:leading-none lg:text-[4.05rem] xl:text-[5.35rem]">
+                    <span class="sm:hidden">
+                        <span class="block">Roofing leads</span>
+                        <span class="block">for booked</span>
+                        <span class="block">inspections</span>
+                        <span class="block">and roof jobs.</span>
+                    </span>
+                    <span class="hidden sm:block">
+                        <span class="block lg:whitespace-nowrap">Roofing leads</span>
+                        <span class="block lg:whitespace-nowrap">for booked</span>
+                        <span class="block lg:whitespace-nowrap">inspections and</span>
+                        <span class="block lg:whitespace-nowrap">replacement jobs.</span>
+                    </span>
+                </h1>
+                <p class="mt-7 max-w-[21.8rem] text-lg leading-8 text-muted sm:max-w-xl">
+                    Get homeowner inquiries for roof replacement, storm damage inspections, repairs, and related exterior work.
                 </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                
-                <div class="cambie-card p-10">
-                    <div class="mb-6 p-3 bg-gray-50 inline-block rounded-lg"><i data-lucide="alert-triangle" class="text-textMain w-6 h-6"></i></div>
-                    <!-- Headline Font -->
-                    <h3 class="text-2xl font-serif text-textMain mb-4">The Agency Trap</h3>
-                    <!-- Body Font -->
-                    <p class="text-muted text-sm leading-relaxed mb-6 font-sans">
-                        Traditional marketing agencies promise the world but deliver disappointment. They charge <strong>$3,000-$10,000/month</strong> in retainers, take 4-6 weeks to launch, and lock you into long-term contracts.
-                    </p>
-                    <p class="text-sm text-textMain font-medium border-l-2 border-red-500 pl-4 font-sans">
-                        Results aren't guaranteed. You could invest six months and $50,000 with nothing to show for it.
-                    </p>
+                <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+                    <a href="#contact" class="inline-flex items-center justify-center gap-2 rounded bg-amber px-6 py-3.5 text-sm font-extrabold text-ink shadow-tight transition hover:bg-white">
+                        <i data-lucide="phone-call" class="h-4 w-4"></i>
+                        Get Roofing Leads
+                    </a>
+                    <a href="#quality" class="inline-flex items-center justify-center gap-2 rounded border border-ink/22 bg-white/40 px-6 py-3.5 text-sm font-extrabold text-ink transition hover:bg-white">
+                        <i data-lucide="shield-check" class="h-4 w-4"></i>
+                        See Lead Standards
+                    </a>
                 </div>
 
-                <div class="cambie-card p-10">
-                    <div class="mb-6 p-3 bg-gray-50 inline-block rounded-lg"><i data-lucide="users" class="text-textMain w-6 h-6"></i></div>
-                    <h3 class="text-2xl font-serif text-textMain mb-4">The Broker Issue</h3>
-                    <p class="text-muted text-sm leading-relaxed mb-6 font-sans">
-                        Most lead providers aren't generating leads—they're reselling recycled data from third-party publishers. These brokers buy cheap bulk traffic and resell the same lead to 5+ law firms.
-                    </p>
-                    <p class="text-sm text-textMain font-medium border-l-2 border-red-500 pl-4 font-sans">
-                        Result? You're calling prospects who've already been bombarded by competing attorneys. Conversion rates are dismal.
-                    </p>
+                <div class="relative mt-8 h-[330px] max-w-[23rem] sm:h-[420px] sm:max-w-[34rem] lg:hidden">
+                    <div class="photo-card mobile-photo-card absolute right-0 top-0 z-0 h-36 w-[70%] rotate-[1.1deg] bg-storm sm:h-56 sm:w-[72%]">
+                        <img src="assets/roofing-hero.png" alt="Roofing contractor inspecting a residential roof after a storm" class="h-full w-full object-cover">
+                    </div>
+
+                    <div class="system-card mobile-system-card absolute left-0 top-6 z-20 w-[8.85rem] -rotate-[1deg] p-2.5 sm:top-10 sm:w-52 sm:p-3.5">
+                        <h3 class="mb-2 text-[0.7rem] font-extrabold text-ink sm:text-sm">Your Territory</h3>
+                        <div class="map-card relative h-[5.7rem] overflow-hidden rounded border border-line sm:h-32">
+                            <img src="assets/roofing-territory-map.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="system-card mobile-system-card absolute bottom-0 left-0 z-30 w-[10.9rem] rotate-[-0.6deg] p-2.5 sm:w-64 sm:p-4">
+                        <h3 class="mb-2 text-[0.7rem] font-extrabold text-ink sm:text-sm">Lead Qualification</h3>
+                        <div class="space-y-1.5 text-[0.66rem] font-bold leading-snug text-ink sm:space-y-2 sm:text-xs">
+                            <div class="flex items-center gap-2 border-t border-line pt-1.5"><span class="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-pine text-white"><i data-lucide="check" class="h-2.5 w-2.5"></i></span>Project type</div>
+                            <div class="flex items-center gap-2 border-t border-line pt-1.5"><span class="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-pine text-white"><i data-lucide="check" class="h-2.5 w-2.5"></i></span>Timeline</div>
+                            <div class="flex items-center gap-2 border-t border-line pt-1.5"><span class="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-pine text-white"><i data-lucide="check" class="h-2.5 w-2.5"></i></span>Budget range</div>
+                            <div class="flex items-center gap-2 border-t border-line pt-1.5"><span class="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-pine text-white"><i data-lucide="check" class="h-2.5 w-2.5"></i></span>Ownership</div>
+                            <div class="flex items-center gap-2 border-t border-line pt-1.5"><span class="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-pine text-white"><i data-lucide="check" class="h-2.5 w-2.5"></i></span>Contact info</div>
+                        </div>
+                    </div>
+
+                    <div class="system-card mobile-system-card absolute bottom-4 right-0 z-20 w-36 rotate-[0.8deg] p-2.5 sm:w-60 sm:p-4">
+                        <div class="flex items-center gap-2">
+                            <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded bg-pine text-white sm:h-10 sm:w-10">
+                                <i data-lucide="calendar-days" class="h-3.5 w-3.5 sm:h-5 sm:w-5"></i>
+                            </span>
+                            <div>
+                                <h3 class="text-[0.7rem] font-extrabold leading-tight text-ink sm:text-sm">Booked Inspection</h3>
+                                <p class="text-[0.65rem] text-muted sm:text-xs">Tue, 10:00 AM</p>
+                            </div>
+                        </div>
+                        <div class="mt-2 grid grid-cols-3 gap-1 border-y border-line py-2 text-center text-[0.55rem] font-bold text-muted sm:mt-3 sm:text-[0.65rem]">
+                            <div><span class="block">MON</span><span class="block text-ink">12</span></div>
+                            <div class="rounded bg-pine py-0.5 text-white"><span class="block">TUE</span><span class="block">13</span></div>
+                            <div><span class="block">WED</span><span class="block text-ink">14</span></div>
+                        </div>
+                        <div class="mt-2 flex items-center gap-2 text-[0.65rem] font-bold text-ink sm:text-xs">
+                            <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-paper">
+                                <i data-lucide="user" class="h-3 w-3"></i>
+                            </span>
+                            <span>Roof replacement</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-9 grid gap-5 sm:grid-cols-3">
+                    <div class="flex gap-3">
+                        <span class="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-line bg-porcelain text-pine">
+                            <i data-lucide="map-pin" class="h-4 w-4"></i>
+                        </span>
+                        <div>
+                            <h3 class="text-sm font-extrabold text-ink">Territory control</h3>
+                            <p class="mt-1 text-xs leading-5 text-muted">Leads in your service area, not across town.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-line bg-porcelain text-pine">
+                            <i data-lucide="shield-check" class="h-4 w-4"></i>
+                        </span>
+                        <div>
+                            <h3 class="text-sm font-extrabold text-ink">Pre-qualified homeowners</h3>
+                            <p class="mt-1 text-xs leading-5 text-muted">Project details and timing before you connect.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-line bg-porcelain text-pine">
+                            <i data-lucide="chart-no-axes-combined" class="h-4 w-4"></i>
+                        </span>
+                        <div>
+                            <h3 class="text-sm font-extrabold text-ink">Built for roofers</h3>
+                            <p class="mt-1 text-xs leading-5 text-muted">Replacement, storm damage, repairs, and more.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative hidden min-h-[600px] lg:block">
+                <div class="photo-card absolute right-0 top-2 z-10 h-[420px] w-[95%] rotate-[1.1deg] bg-storm">
+                    <img src="assets/roofing-hero.png" alt="Roofing contractor inspecting a residential roof after a storm" class="h-full w-full object-cover">
+                </div>
+
+                <div class="system-card absolute left-[-7rem] top-16 z-20 w-[280px] -rotate-[1.1deg] p-4">
+                    <h3 class="mb-3 text-base font-extrabold text-ink">Your Territory</h3>
+                    <div class="map-card relative h-48 overflow-hidden rounded border border-line">
+                        <img src="assets/roofing-territory-map.png" alt="">
+                    </div>
+                </div>
+
+                <div class="system-card absolute left-[-3rem] top-[300px] z-30 w-[300px] rotate-[-0.7deg] p-5">
+                    <h3 class="mb-4 text-base font-extrabold text-ink">Lead Qualification</h3>
+                    <div class="space-y-2.5 text-sm text-ink">
+                        <div class="flex items-center gap-3 border-t border-line pt-3"><span class="flex h-6 w-6 items-center justify-center rounded-full bg-pine text-white"><i data-lucide="check" class="h-4 w-4"></i></span>Project type verified</div>
+                        <div class="flex items-center gap-3 border-t border-line pt-3"><span class="flex h-6 w-6 items-center justify-center rounded-full bg-pine text-white"><i data-lucide="check" class="h-4 w-4"></i></span>Timeline confirmed</div>
+                        <div class="flex items-center gap-3 border-t border-line pt-3"><span class="flex h-6 w-6 items-center justify-center rounded-full bg-pine text-white"><i data-lucide="check" class="h-4 w-4"></i></span>Budget range identified</div>
+                        <div class="flex items-center gap-3 border-t border-line pt-3"><span class="flex h-6 w-6 items-center justify-center rounded-full bg-pine text-white"><i data-lucide="check" class="h-4 w-4"></i></span>Ownership verified</div>
+                        <div class="flex items-center gap-3 border-t border-line pt-3"><span class="flex h-6 w-6 items-center justify-center rounded-full bg-pine text-white"><i data-lucide="check" class="h-4 w-4"></i></span>Contact info confirmed</div>
+                        <div class="flex items-center gap-3 border-t border-line pt-3"><span class="flex h-6 w-6 items-center justify-center rounded-full bg-pine text-white"><i data-lucide="check" class="h-4 w-4"></i></span>Service area matched</div>
+                    </div>
+                </div>
+
+                <div class="system-card absolute right-0 top-[390px] z-40 w-[320px] rotate-[0.8deg] p-5">
+                    <div class="flex items-center gap-4">
+                        <span class="flex h-12 w-12 items-center justify-center rounded bg-pine text-white">
+                            <i data-lucide="calendar-days" class="h-6 w-6"></i>
+                        </span>
+                        <div>
+                            <h3 class="text-base font-extrabold text-ink">Inspection Scheduled</h3>
+                            <p class="text-sm text-muted">Tomorrow, 10:00 AM</p>
+                        </div>
+                    </div>
+                    <div class="mt-5 grid grid-cols-5 gap-2 border-y border-line py-4 text-center text-xs text-muted">
+                        <div><span class="block font-bold">MON</span><span class="mt-2 block text-ink">12</span></div>
+                        <div class="rounded bg-pine py-1 text-white"><span class="block font-bold">TUE</span><span class="mt-2 block">13</span></div>
+                        <div><span class="block font-bold">WED</span><span class="mt-2 block text-ink">14</span></div>
+                        <div><span class="block font-bold">THU</span><span class="mt-2 block text-ink">15</span></div>
+                        <div><span class="block font-bold">FRI</span><span class="mt-2 block text-ink">16</span></div>
+                    </div>
+                    <div class="mt-4 flex items-center gap-3">
+                        <span class="flex h-10 w-10 items-center justify-center rounded-full bg-paper text-ink">
+                            <i data-lucide="user" class="h-5 w-5"></i>
+                        </span>
+                        <div>
+                            <p class="text-sm font-extrabold text-ink">Homeowner</p>
+                            <p class="text-sm text-muted">Roof replacement</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </header>
 
-    <!-- SECTION 3: THE SOLUTION (BENTO GRID) -->
-    <section class="py-32 px-6 border-b border-border z-10 relative" id="solution">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-3xl mx-auto mb-20">
-                <h2 class="text-5xl font-serif text-textMain mb-6">SolidlyLeads Pays For The Marketing.<br><span class="text-textMain opacity-50">You Only Pay Per Qualified Lead.</span></h2>
-                <p class="text-muted text-lg font-sans">
-                    We act as your dedicated performance marketing team—with zero risk to you. We absorb the ad spend, generate the traffic, verify the leads, and deliver only qualified legal prospects directly to your intake team.
-                </p>
-            </div>
-
-            <!-- THE BENTO GRID -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-                <!-- TILE 1 -->
-                <div class="cambie-card md:col-span-2 p-10 flex flex-col justify-between h-full">
-                    <div>
-                        <span class="text-accent font-sans font-bold text-[10px] uppercase tracking-widest mb-4 block">01. No Middlemen</span>
-                        <!-- Headline Font: Serif -->
-                        <h3 class="text-3xl text-textMain font-serif mb-3">Direct Source Exclusivity</h3>
-                        <!-- Body Font -->
-                        <p class="text-muted text-sm max-w-md font-sans">We generate leads directly for law firms. No third-party brokers. You're buying from the source, ensuring higher intent and better contact rates.</p>
-                    </div>
-                    <div class="mt-8 flex gap-2">
-                        <span class="bg-gray-50 border border-border px-3 py-1 text-[10px] text-textMain font-bold uppercase tracking-wider rounded font-sans">Google Ads</span>
-                        <span class="bg-gray-50 border border-border px-3 py-1 text-[10px] text-textMain font-bold uppercase tracking-wider rounded font-sans">Meta API</span>
-                        <span class="bg-gray-50 border border-border px-3 py-1 text-[10px] text-textMain font-bold uppercase tracking-wider rounded font-sans">Native</span>
-                    </div>
+    <main>
+        <section id="lead-types" class="border-y border-line bg-porcelain px-5 py-24">
+            <div class="mx-auto max-w-6xl">
+                <div class="mb-12 max-w-3xl">
+                    <span class="section-kicker">Roofing lead categories</span>
+                    <h2 class="mt-3 font-serif text-4xl font-semibold leading-tight md:text-5xl">Roofing leads for the jobs your sales team actually wants to quote.</h2>
+                    <p class="mt-5 text-lg leading-8 text-muted">
+                        Roofing lead quality changes fast by season, storm activity, and territory. We build around the categories you want now, then adjust volume and filters as your market shifts.
+                    </p>
                 </div>
 
-                <!-- TILE 2 -->
-                <div class="cambie-card p-10">
-                    <span class="text-accent font-sans font-bold text-[10px] uppercase tracking-widest mb-4 block">02. Predictable</span>
-                    <!-- UPDATED: Headline Font to Serif -->
-                    <h3 class="text-3xl text-textMain font-serif mb-3">Predictable Case Flow</h3>
-                    <p class="text-muted text-sm font-sans">Stop guessing your marketing ROI. With a fixed cost per qualified lead, you can forecast intake volume and plan attorney capacity.</p>
-                </div>
-
-                <!-- TILE 3 -->
-                <div class="cambie-card p-10">
-                    <span class="text-accent font-sans font-bold text-[10px] uppercase tracking-widest mb-4 block">03. Speed</span>
-                    <!-- UPDATED: Headline Font to Serif -->
-                    <h3 class="text-3xl text-textMain font-serif mb-3">Launch in 5-7 Days</h3>
-                    <p class="text-muted text-sm font-sans">Skip the 4-6 week agency onboarding nightmare. We build campaigns and integrations in under a week.</p>
-                </div>
-
-                <!-- TILE 4 -->
-                <div class="cambie-card md:col-span-2 p-10 flex flex-col md:flex-row items-center gap-8">
-                    <div class="flex-1">
-                        <span class="text-accent font-sans font-bold text-[10px] uppercase tracking-widest mb-4 block">04. Zero Risk</span>
-                        <!-- Headline Font: Serif -->
-                        <h3 class="text-3xl text-textMain font-serif mb-3">Zero Ad Spend Liability</h3>
-                        <p class="text-muted text-sm font-sans">No setup fees. No monthly retainers. No ad spend liability. You only pay for qualified leads, guaranteed.</p>
-                    </div>
-                    <div class="w-full md:w-64 bg-gray-50 border border-border p-6 rounded-lg">
-                        <div class="flex justify-between text-xs text-muted mb-2 font-sans"><span>Agency Fee</span> <span class="line-through decoration-red-400">$5,000</span></div>
-                        <div class="flex justify-between text-xs text-muted mb-4 font-sans"><span>Ad Spend</span> <span class="line-through decoration-red-400">$10,000</span></div>
-                        <div class="h-px bg-border w-full mb-4"></div>
-                        <div class="flex justify-between text-sm text-textMain font-bold font-sans"><span>Your Risk</span> <span class="text-accent">$0.00</span></div>
-                    </div>
+                <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    <article class="work-card p-6">
+                        <span class="icon-tile"><i data-lucide="house" class="h-5 w-5"></i></span>
+                        <h3 class="mt-5 text-xl font-extrabold">Roof Replacement</h3>
+                        <p class="mt-3 text-sm leading-6 text-muted">Homeowners asking about aging roofs, missing shingles, leaks, and full replacement estimates.</p>
+                    </article>
+                    <article class="work-card p-6">
+                        <span class="icon-tile"><i data-lucide="cloud-lightning" class="h-5 w-5"></i></span>
+                        <h3 class="mt-5 text-xl font-extrabold">Storm Damage</h3>
+                        <p class="mt-3 text-sm leading-6 text-muted">Hail, wind, and post-storm inspection requests from homeowners looking for a local roofer.</p>
+                    </article>
+                    <article class="work-card p-6">
+                        <span class="icon-tile"><i data-lucide="droplets" class="h-5 w-5"></i></span>
+                        <h3 class="mt-5 text-xl font-extrabold">Roof Leaks & Repairs</h3>
+                        <p class="mt-3 text-sm leading-6 text-muted">Leak diagnosis, flashing issues, patch work, and urgent repair inquiries that can turn into larger jobs.</p>
+                    </article>
+                    <article class="work-card p-6">
+                        <span class="icon-tile"><i data-lucide="clipboard-check" class="h-5 w-5"></i></span>
+                        <h3 class="mt-5 text-xl font-extrabold">Inspection Requests</h3>
+                        <p class="mt-3 text-sm leading-6 text-muted">Homeowners asking for roof condition checks, quote appointments, and pre-sale or post-storm assessments.</p>
+                    </article>
+                    <article class="work-card p-6">
+                        <span class="icon-tile"><i data-lucide="landmark" class="h-5 w-5"></i></span>
+                        <h3 class="mt-5 text-xl font-extrabold">Damage Assessment Inquiries</h3>
+                        <p class="mt-3 text-sm leading-6 text-muted">Homeowners who noticed roof damage and want a contractor to inspect, document what they see, and explain next steps.</p>
+                    </article>
+                    <article class="work-card p-6">
+                        <span class="icon-tile"><i data-lucide="waves" class="h-5 w-5"></i></span>
+                        <h3 class="mt-5 text-xl font-extrabold">Gutters & Exterior Add-Ons</h3>
+                        <p class="mt-3 text-sm leading-6 text-muted">Gutter replacement, fascia, soffit, ventilation, and related exterior work that pairs with roofing jobs.</p>
+                    </article>
                 </div>
             </div>
+        </section>
 
-            <!-- ROW 2 TILES -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                 <div class="cambie-card p-8 flex items-center gap-6">
-                    <div class="p-3 bg-gray-50 rounded-full"><i data-lucide="bar-chart-2" class="text-textMain w-5 h-5"></i></div>
-                    <div>
-                        <!-- UPDATED: Headline Font to Serif -->
-                        <h4 class="text-textMain font-serif text-2xl">Scale On Demand</h4>
-                        <p class="text-muted text-xs mt-1 font-sans">Need 20 cases this week and 200 next? We adjust volume in real-time.</p>
-                    </div>
-                </div>
-                 <div class="cambie-card p-8 flex items-center gap-6">
-                    <div class="p-3 bg-gray-50 rounded-full"><i data-lucide="heart-handshake" class="text-textMain w-5 h-5"></i></div>
-                    <div>
-                        <!-- UPDATED: Headline Font to Serif -->
-                        <h4 class="text-textMain font-serif text-2xl">Partnership-Driven</h4>
-                        <p class="text-muted text-xs mt-1 font-sans">We succeed when you sign cases. We prioritize long-term relationships with growing firms.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 4: HOW IT WORKS -->
-    <section class="py-32 px-6 border-b border-border z-10 relative bg-white">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-6">
+        <section class="px-5 py-24">
+            <div class="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
                 <div>
-                    <h2 class="font-serif text-4xl text-textMain mb-2">Your Next Signed Case Is Just Three Steps Away</h2>
-                    <p class="text-muted font-sans">You define the case type. We deliver the prospect. It's that simple.</p>
+                    <span class="section-kicker">The problem</span>
+                    <h2 class="mt-3 font-serif text-4xl font-semibold leading-tight md:text-5xl">Roofers lose margin when every lead is shared, stale, or outside the right zone.</h2>
+                    <p class="mt-5 text-lg leading-8 text-muted">
+                        Roofing is timing-sensitive. After a storm, homeowners get flooded with ads and calls. In slower months, the wrong lead source fills your team with bad numbers, low-value requests, and jobs outside your route.
+                    </p>
                 </div>
-                <a href="#contact" class="text-textMain text-sm border-b border-textMain pb-1 hover:text-accent hover:border-accent transition font-sans font-medium">Start Your Campaign Now &rarr;</a>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
-                <!-- Line -->
-                <div class="hidden md:block absolute top-6 left-0 w-full h-px bg-border"></div>
-
-                <div class="relative z-10">
-                    <div class="w-12 h-12 bg-white border border-border rounded-full flex items-center justify-center mb-8 mx-auto md:mx-0 shadow-sm">
-                        <span class="font-serif text-xl text-textMain">1</span>
+                <div class="grid gap-4 sm:grid-cols-2">
+                    <div class="work-card p-6">
+                        <i data-lucide="users-round" class="h-7 w-7 text-clay"></i>
+                        <h3 class="mt-5 text-xl font-extrabold">Shared leads create a race</h3>
+                        <p class="mt-3 text-sm leading-6 text-muted">If the same homeowner goes to five roofers, your sales team is competing against speed, not trust.</p>
                     </div>
-                    <!-- Body Font Bold -->
-                    <h3 class="text-lg font-sans font-bold text-textMain mb-3">Set Your Criteria</h3>
-                    <p class="text-sm text-muted leading-relaxed font-sans">Tell us your practice area and define your Ideal Client Profile. We configure filters for location, injury type, case value, statute of limitations windows, and any custom qualifying questions specific to your firm.</p>
-                </div>
-
-                <div class="relative z-10">
-                     <div class="w-12 h-12 bg-white border border-border rounded-full flex items-center justify-center mb-8 mx-auto md:mx-0 shadow-sm">
-                        <span class="font-serif text-xl text-textMain">2</span>
+                    <div class="work-card p-6">
+                        <i data-lucide="map-pinned" class="h-7 w-7 text-clay"></i>
+                        <h3 class="mt-5 text-xl font-extrabold">Bad geography wastes crews</h3>
+                        <p class="mt-3 text-sm leading-6 text-muted">Out-of-area leads look cheap until your estimators spend hours chasing jobs you would never take.</p>
                     </div>
-                    <!-- Body Font Bold -->
-                    <h3 class="text-lg font-sans font-bold text-textMain mb-3">We Launch & Verify</h3>
-                    <p class="text-sm text-muted leading-relaxed font-sans">Our team deploys custom ad campaigns across major platforms. Every lead undergoes OTP (One-Time Password) verification for phone numbers and double opt-in for email.</p>
-                </div>
-
-                <div class="relative z-10">
-                     <div class="w-12 h-12 bg-white border border-border rounded-full flex items-center justify-center mb-8 mx-auto md:mx-0 shadow-sm">
-                        <span class="font-serif text-xl text-textMain">3</span>
+                    <div class="work-card p-6 sm:col-span-2">
+                        <i data-lucide="calendar-x-2" class="h-7 w-7 text-clay"></i>
+                        <h3 class="mt-5 text-xl font-extrabold">Raw volume does not equal inspections</h3>
+                        <p class="mt-3 text-sm leading-6 text-muted">A good roofing lead source should care about roof issue, location, timeline, homeowner intent, and whether your team can reach them fast.</p>
                     </div>
-                    <!-- Body Font Bold -->
-                    <h3 class="text-lg font-sans font-bold text-textMain mb-3">Receive & Close</h3>
-                    <p class="text-sm text-muted leading-relaxed font-sans">Qualified leads are pushed to your intake CRM in real-time. You receive complete contact information and case details. You only pay for leads that meet your agreed-upon criteria.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- SECTION 5: COMPARISON TABLE -->
-    <section class="py-32 px-6 border-b border-border z-10 relative bg-background" id="comparison">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-serif text-textMain mb-4">How We Compare to Your Other Options</h2>
-                <p class="text-muted font-sans">Don't settle for expensive agencies or low-quality brokers.</p>
-            </div>
-            
-            <div class="overflow-x-auto border border-border rounded-xl bg-white shadow-card">
-                <table class="w-full text-left border-collapse min-w-[800px]">
-                    <thead>
-                        <tr class="border-b border-border bg-gray-50">
-                            <th class="py-6 px-6 font-sans text-xs uppercase tracking-widest text-muted font-bold w-1/5">Feature</th>
-                            <th class="py-6 px-6 font-sans text-xs uppercase tracking-widest text-textMain font-bold w-1/5 border-x border-border bg-white shadow-sm">SolidlyLeads</th>
-                            <th class="py-6 px-6 font-sans text-xs uppercase tracking-widest text-muted font-medium w-1/5 opacity-70">Traditional Agency</th>
-                            <th class="py-6 px-6 font-sans text-xs uppercase tracking-widest text-muted font-medium w-1/5 opacity-70">Lead Brokers</th>
-                            <th class="py-6 px-6 font-sans text-xs uppercase tracking-widest text-muted font-medium w-1/5 opacity-70">Internal Team</th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-sm font-sans">
-                        <!-- Cost Model -->
-                        <tr class="border-b border-border hover:bg-gray-50 transition-colors">
-                            <td class="py-5 px-6 text-textMain font-semibold">Cost Model</td>
-                            <td class="py-5 px-6 text-textMain font-bold border-x border-border bg-white">Pay Per Qualified Lead</td>
-                            <td class="py-5 px-6 text-muted">High Retainer + % Spend</td>
-                            <td class="py-5 px-6 text-muted">Pay Per Lead (Low Quality)</td>
-                            <td class="py-5 px-6 text-muted">Salary + Benefits + Tools</td>
-                        </tr>
-                        <!-- Risk Factor -->
-                        <tr class="border-b border-border hover:bg-gray-50 transition-colors">
-                            <td class="py-5 px-6 text-textMain font-semibold">Risk Factor</td>
-                            <td class="py-5 px-6 text-textMain font-bold border-x border-border bg-white">Zero Risk (We Pay Ads)</td>
-                            <td class="py-5 px-6 text-muted">High Risk (You Pay Ads)</td>
-                            <td class="py-5 px-6 text-muted">Medium Risk</td>
-                            <td class="py-5 px-6 text-muted">High Risk</td>
-                        </tr>
-                        <!-- Lead Source -->
-                        <tr class="border-b border-border hover:bg-gray-50 transition-colors">
-                            <td class="py-5 px-6 text-textMain font-semibold">Lead Source</td>
-                            <td class="py-5 px-6 text-textMain font-bold border-x border-border bg-white">Direct & Exclusive</td>
-                            <td class="py-5 px-6 text-muted">Custom</td>
-                            <td class="py-5 px-6 text-muted">Resold / Brokered</td>
-                            <td class="py-5 px-6 text-muted">Custom</td>
-                        </tr>
-                        <!-- Lead Quality -->
-                        <tr class="border-b border-border hover:bg-gray-50 transition-colors">
-                            <td class="py-5 px-6 text-textMain font-semibold">Lead Quality</td>
-                            <td class="py-5 px-6 text-textMain font-bold border-x border-border bg-white">High Intent + OTP Verified</td>
-                            <td class="py-5 px-6 text-muted">Variable</td>
-                            <td class="py-5 px-6 text-muted">Low (Cold/Recycled)</td>
-                            <td class="py-5 px-6 text-muted">Variable</td>
-                        </tr>
-                        <!-- Time To Launch -->
-                        <tr class="border-b border-border hover:bg-gray-50 transition-colors">
-                            <td class="py-5 px-6 text-textMain font-semibold">Time To Launch</td>
-                            <td class="py-5 px-6 text-textMain font-bold border-x border-border bg-white">5-7 Days</td>
-                            <td class="py-5 px-6 text-muted">4-6 Weeks</td>
-                            <td class="py-5 px-6 text-muted">Immediate (Junk)</td>
-                            <td class="py-5 px-6 text-muted">6-12 Weeks</td>
-                        </tr>
-                        <!-- Contract Terms -->
-                        <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="py-5 px-6 text-textMain font-semibold">Contract Terms</td>
-                            <td class="py-5 px-6 text-textMain font-bold border-x border-border bg-white">Cancel Anytime</td>
-                            <td class="py-5 px-6 text-muted">6-12 Month Minimum</td>
-                            <td class="py-5 px-6 text-muted">Transactional</td>
-                            <td class="py-5 px-6 text-muted">Employment Contract</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 6: LEAD QUALITY (UNIFIED STYLE) -->
-    <section class="py-32 px-6 border-b border-border z-10 relative">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl font-serif text-textMain mb-6">How We Ensure Premium Lead Quality</h2>
-            <p class="text-muted text-lg mb-12 max-w-2xl font-sans">Unlike brokers who prioritize volume over quality, we've built our entire process around delivering legal prospects who are genuinely interested, reachable, and ready to retain.</p>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-
-                <!-- STAT CARD -->
-                <div class="cambie-card lg:row-span-2 p-10 flex flex-col justify-center items-center text-center h-full">
-                    <span class="font-sans text-[10px] font-bold uppercase text-muted mb-4 tracking-widest">Internal Data Q4 2025</span>
-                    <div class="text-8xl font-serif text-textMain mb-2">78%</div>
-                    <!-- Body Font Bold -->
-                    <p class="text-accent font-sans font-bold uppercase tracking-widest text-xs mb-4">Average Contact Rate</p>
-                    <p class="text-muted text-xs leading-relaxed max-w-xs font-sans">Compared to industry standard 30-40%. Our OTP verification ensures real humans, not bots or disconnected numbers.</p>
-                </div>
-
-                <!-- ITEMS -->
-                <div class="cambie-card p-8">
-                    <!-- Body Font Bold -->
-                    <h3 class="text-textMain font-sans font-bold text-lg mb-2">1. Precision Targeting</h3>
-                    <p class="text-muted text-xs leading-relaxed font-sans">We target your exact client profile using advanced demographic, geographic, and behavioral filters across all major advertising platforms. We exclude low-intent audiences and non-qualifying demographics.</p>
-                </div>
-                <div class="cambie-card p-8">
-                    <h3 class="text-textMain font-sans font-bold text-lg mb-2">2. Contact Verification</h3>
-                    <p class="text-muted text-xs leading-relaxed font-sans">Every lead undergoes OTP verification for phone numbers and double opt-in confirmation for email addresses. No disconnected lines. No bots.</p>
-                </div>
-                <div class="cambie-card p-8">
-                    <h3 class="text-textMain font-sans font-bold text-lg mb-2">3. Custom Qualification</h3>
-                    <p class="text-muted text-xs leading-relaxed font-sans">We ask your specific qualifying questions upfront—incident date, injury type, fault, insurance status—so you only speak with prospects who meet your case criteria.</p>
-                </div>
-                <div class="cambie-card p-8">
-                    <h3 class="text-textMain font-sans font-bold text-lg mb-2">4. Continuous Optimization</h3>
-                    <p class="text-muted text-xs leading-relaxed font-sans">We monitor your intake feedback. If a traffic source isn't converting to signed cases, we cut it immediately. We don't just "set it and forget it."</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 7: INDUSTRIES -->
-    <section class="py-24 px-6 border-b border-border z-10 relative bg-white">
-        <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-3xl font-serif text-textMain mb-8">Trusted Across High-Value Legal Practice Areas</h2>
-            
-            <div class="flex flex-wrap justify-center gap-3 font-sans">
-                <span class="px-5 py-2 border border-border rounded-full text-muted text-sm hover:border-textMain hover:text-textMain transition-colors cursor-default bg-background font-medium">Personal Injury</span>
-                <span class="px-5 py-2 border border-border rounded-full text-muted text-sm hover:border-textMain hover:text-textMain transition-colors cursor-default bg-background font-medium">Motor Vehicle Accidents (MVA)</span>
-                <span class="px-5 py-2 border border-border rounded-full text-muted text-sm hover:border-textMain hover:text-textMain transition-colors cursor-default bg-background font-medium">Workplace & Workers' Comp</span>
-                <span class="px-5 py-2 border border-border rounded-full text-muted text-sm hover:border-textMain hover:text-textMain transition-colors cursor-default bg-background font-medium">Immigration Defense</span>
-                <span class="px-5 py-2 border border-border rounded-full text-muted text-sm hover:border-textMain hover:text-textMain transition-colors cursor-default bg-background font-medium">Mass Tort</span>
-                <span class="px-5 py-2 border border-border rounded-full text-muted text-sm hover:border-textMain hover:text-textMain transition-colors cursor-default bg-background font-medium">Criminal Defense</span>
-                <span class="px-5 py-2 border border-border rounded-full text-muted text-sm hover:border-textMain hover:text-textMain transition-colors cursor-default bg-background font-medium">Family Law</span>
-                <span class="px-5 py-2 border border-border rounded-full text-muted text-sm hover:border-textMain hover:text-textMain transition-colors cursor-default bg-background font-medium">Employment Law</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 8: FAQ -->
-    <section class="py-32 px-6 z-10 relative bg-background" id="faq">
-        <div class="max-w-3xl mx-auto">
-            <h2 class="text-4xl font-serif text-center mb-16 text-textMain">Your Questions Answered</h2>
-            
-            <div class="space-y-4 font-sans">
-                <details class="group faq-item bg-white border border-border rounded-lg open:shadow-md transition-all">
-                    <summary class="flex justify-between items-center cursor-pointer p-6 list-none text-textMain font-bold">
-                        <span>How much does it cost?</span>
-                        <span class="transition group-open:rotate-45 text-muted">+</span>
-                    </summary>
-                    <div class="px-6 pb-6 text-muted text-sm leading-relaxed">
-                        No retainers. No setup fees. You pay a fixed rate per qualified lead, agreed upfront before we launch. Rates vary by practice area and volume — contact us for a custom quote.
+        <section id="quality" class="bg-pine px-5 py-24 text-white">
+            <div class="mx-auto max-w-6xl">
+                <div class="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-start">
+                    <div>
+                        <span class="text-xs font-extrabold uppercase text-amber">Lead quality standards</span>
+                        <h2 class="mt-3 font-serif text-4xl font-semibold leading-tight md:text-5xl">Define what counts before your sales team starts calling.</h2>
+                        <p class="mt-5 text-lg leading-8 text-white/72">
+                            Before delivery starts, we agree on territory, roof project type, homeowner details, timing, and contact standards. That keeps your team focused on inquiries with real appointment potential.
+                        </p>
                     </div>
-                </details>
-
-                <details class="group faq-item bg-white border border-border rounded-lg open:shadow-md transition-all">
-                    <summary class="flex justify-between items-center cursor-pointer p-6 list-none text-textMain font-bold">
-                        <span>How do I know the leads are actually qualified?</span>
-                        <span class="transition group-open:rotate-45 text-muted">+</span>
-                    </summary>
-                    <div class="px-6 pb-6 text-muted text-sm leading-relaxed">
-                        Quality is our #1 priority. Every lead goes through OTP contact verification, custom qualification questions, and real-time data validation. Plus, you provide ongoing intake feedback that we use to optimize targeting. If a lead doesn't meet criteria, you don't pay.
+                    <div class="grid gap-4 sm:grid-cols-2">
+                        <div class="rounded-lg border border-white/14 bg-white/7 p-6">
+                            <div class="text-3xl font-extrabold text-amber">01</div>
+                            <h3 class="mt-4 text-lg font-extrabold">Territory fit</h3>
+                            <p class="mt-2 text-sm leading-6 text-white/68">Filter by cities, counties, ZIP codes, drive radius, storm paths, or the neighborhoods your team wants.</p>
+                        </div>
+                        <div class="rounded-lg border border-white/14 bg-white/7 p-6">
+                            <div class="text-3xl font-extrabold text-amber">02</div>
+                            <h3 class="mt-4 text-lg font-extrabold">Roofing need</h3>
+                            <p class="mt-2 text-sm leading-6 text-white/68">Replacement, storm damage, inspection, leak repair, or exterior add-on categories you approve.</p>
+                        </div>
+                        <div class="rounded-lg border border-white/14 bg-white/7 p-6">
+                            <div class="text-3xl font-extrabold text-amber">03</div>
+                            <h3 class="mt-4 text-lg font-extrabold">Homeowner intent</h3>
+                            <p class="mt-2 text-sm leading-6 text-white/68">Ownership status, issue details, project timing, and notes your estimator needs before making the call.</p>
+                        </div>
+                        <div class="rounded-lg border border-white/14 bg-white/7 p-6">
+                            <div class="text-3xl font-extrabold text-amber">04</div>
+                            <h3 class="mt-4 text-lg font-extrabold">Reachable contact</h3>
+                            <p class="mt-2 text-sm leading-6 text-white/68">Phone and email checks help reduce fake names, disconnected numbers, and submissions outside your market.</p>
+                        </div>
                     </div>
-                </details>
-
-                <details class="group faq-item bg-white border border-border rounded-lg open:shadow-md transition-all">
-                    <summary class="flex justify-between items-center cursor-pointer p-6 list-none text-textMain font-bold">
-                        <span>Why are you better than big lead vendors?</span>
-                        <span class="transition group-open:rotate-45 text-muted">+</span>
-                    </summary>
-                    <div class="px-6 pb-6 text-muted text-sm leading-relaxed">
-                        Big vendors are "aggregators" who resell recycled data to 5+ law firms. We are the SOURCE. We run the ads directly. Every lead is fresh, exclusive to you, and generated minutes before delivery. Contact rates are typically 2x higher than broker leads.
-                    </div>
-                </details>
-
-                <details class="group faq-item bg-white border border-border rounded-lg open:shadow-md transition-all">
-                    <summary class="flex justify-between items-center cursor-pointer p-6 list-none text-textMain font-bold">
-                        <span>Is there a minimum order or long-term contract?</span>
-                        <span class="transition group-open:rotate-45 text-muted">+</span>
-                    </summary>
-                    <div class="px-6 pb-6 text-muted text-sm leading-relaxed">
-                        No long-term contracts. Start with a pilot batch (25-50 leads). If satisfied, scale up. If not, cancel anytime. No penalties.
-                    </div>
-                </details>
-
-                <details class="group faq-item bg-white border border-border rounded-lg open:shadow-md transition-all">
-                    <summary class="flex justify-between items-center cursor-pointer p-6 list-none text-textMain font-bold">
-                        <span>How quickly can we get started?</span>
-                        <span class="transition group-open:rotate-45 text-muted">+</span>
-                    </summary>
-                    <div class="px-6 pb-6 text-muted text-sm leading-relaxed">
-                         We can launch in as little as 2-3 days. Day 1: Strategy & setup. Day 2: Build & integrations. Day 3: Testing & launch.
-                    </div>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 9: FINAL CTA (CALENDLY EMBED) -->
-    <section class="py-32 px-6 border-t border-border z-10 relative bg-brand text-white" id="contact">
-        <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            
-            <div class="sticky top-24">
-                <span class="text-white/70 font-sans font-bold text-xs uppercase tracking-widest block mb-6">Stop Wasting Money</span>
-                <h2 class="text-5xl md:text-6xl font-serif text-white mb-6">Ready to Fill Your Pipeline with Qualified Legal Prospects?</h2>
-                <p class="text-white/70 text-lg mb-8 font-sans">No retainers. No guesswork. No risk. Just high-intent leads delivered to your intake team starting in 5-7 days.</p>
-                
-                <div class="space-y-4 font-sans text-sm text-white/80">
-                    <div class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-accent rounded-full"></span> No credit card required</div>
-                    <div class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-accent rounded-full"></span> Cancel anytime</div>
-                    <div class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-accent rounded-full"></span> Launch in 5-7 days</div>
                 </div>
             </div>
+        </section>
 
-            <!-- CALENDLY EMBED -->
-            <div class="bg-white border border-border rounded-lg overflow-hidden shadow-2xl relative">
-                <!-- Calendly inline widget begin -->
-                <div class="calendly-inline-widget" data-url="https://calendly.com/sssolt750/30min" style="min-width:320px;height:700px;"></div>
-                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-                <!-- Calendly inline widget end -->
-            </div>
-        </div>
-    </section>
+        <section class="border-b border-line bg-porcelain px-5 py-24">
+            <div class="mx-auto max-w-6xl">
+                <div class="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+                    <div class="max-w-2xl">
+                        <span class="section-kicker">How it works</span>
+                        <h2 class="mt-3 font-serif text-4xl font-semibold leading-tight md:text-5xl">Launch by territory, then adjust around real crew capacity.</h2>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center gap-2 text-sm font-extrabold text-pine hover:text-moss">
+                        Start with a call
+                        <i data-lucide="arrow-right" class="h-4 w-4"></i>
+                    </a>
+                </div>
 
-    <!-- FOOTER -->
-    <footer class="py-12 px-6 border-t border-border bg-background z-10 relative">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <span class="font-serif text-2xl text-textMain">SolidlyLeads</span>
-            <div class="flex flex-wrap justify-center gap-8 text-[10px] font-sans font-bold text-muted uppercase tracking-widest">
-                <a href="about.html" class="hover:text-textMain transition-colors">About Us</a>
-                <a href="privacy.html" class="hover:text-textMain transition-colors">Privacy</a>
-                <a href="terms.html" class="hover:text-textMain transition-colors">Terms</a>
-                <a href="refund.html" class="hover:text-textMain transition-colors">Refund Policy</a>
-                <a href="#contact" class="hover:text-textMain transition-colors">Contact</a>
+                <div class="grid gap-4 md:grid-cols-3">
+                    <div class="work-card p-7">
+                        <div class="flex h-10 w-10 items-center justify-center rounded-full bg-moss text-sm font-extrabold text-white">1</div>
+                        <h3 class="mt-6 text-xl font-extrabold">Pick the market</h3>
+                        <p class="mt-3 text-sm leading-6 text-muted">Choose the ZIP codes, neighborhoods, storm areas, and roofing categories you want to accept.</p>
+                    </div>
+                    <div class="work-card p-7">
+                        <div class="flex h-10 w-10 items-center justify-center rounded-full bg-moss text-sm font-extrabold text-white">2</div>
+                        <h3 class="mt-6 text-xl font-extrabold">Set the lead rules</h3>
+                        <p class="mt-3 text-sm leading-6 text-muted">Define what must be included before a lead is accepted: roof issue, timing, contact quality, and location.</p>
+                    </div>
+                    <div class="work-card p-7">
+                        <div class="flex h-10 w-10 items-center justify-center rounded-full bg-moss text-sm font-extrabold text-white">3</div>
+                        <h3 class="mt-6 text-xl font-extrabold">Book inspections fast</h3>
+                        <p class="mt-3 text-sm leading-6 text-muted">Qualified homeowners are delivered to your intake flow so your team can respond quickly and schedule the inspection.</p>
+                    </div>
+                </div>
             </div>
-            <div class="text-[10px] font-sans text-muted font-medium">
-                © 2026 SolidlyLeads. All Rights Reserved.
+        </section>
+
+        <section id="compare" class="px-5 py-24">
+            <div class="mx-auto max-w-6xl">
+                <div class="mb-12 text-center">
+                    <span class="section-kicker">Comparison</span>
+                    <h2 class="mt-3 font-serif text-4xl font-semibold leading-tight md:text-5xl">A cleaner alternative to retainers and shared roofing lead vendors.</h2>
+                    <p class="mx-auto mt-5 max-w-2xl text-lg leading-8 text-muted">The goal is not more names in a spreadsheet. The goal is qualified homeowners who match your territory, roofing category, and follow-up capacity.</p>
+                </div>
+
+                <div class="overflow-x-auto rounded-lg border border-line bg-porcelain shadow-soft">
+                    <table class="w-full min-w-[820px] border-collapse text-left text-sm">
+                        <thead class="bg-paper">
+                            <tr>
+                                <th class="px-6 py-5 font-extrabold text-muted">Model</th>
+                                <th class="border-x border-line bg-porcelain px-6 py-5 font-extrabold text-ink">SolidlyLeads</th>
+                                <th class="px-6 py-5 font-extrabold text-muted">Traditional Agency</th>
+                                <th class="px-6 py-5 font-extrabold text-muted">Shared Lead Vendor</th>
+                                <th class="px-6 py-5 font-extrabold text-muted">In-House Team</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-t border-line">
+                                <td class="px-6 py-5 font-bold">Cost structure</td>
+                                <td class="border-x border-line bg-porcelain px-6 py-5 font-extrabold text-pine">Pay per qualified roofing lead</td>
+                                <td class="px-6 py-5 text-muted">Monthly retainer plus tools</td>
+                                <td class="px-6 py-5 text-muted">Per lead, often shared</td>
+                                <td class="px-6 py-5 text-muted">Salary, tools, training</td>
+                            </tr>
+                            <tr class="border-t border-line">
+                                <td class="px-6 py-5 font-bold">Commitment</td>
+                                <td class="border-x border-line bg-porcelain px-6 py-5 font-extrabold text-pine">No fixed monthly retainer</td>
+                                <td class="px-6 py-5 text-muted">Often 6 to 12 months</td>
+                                <td class="px-6 py-5 text-muted">Easy to buy, hard to control</td>
+                                <td class="px-6 py-5 text-muted">Long hiring ramp</td>
+                            </tr>
+                            <tr class="border-t border-line">
+                                <td class="px-6 py-5 font-bold">Territory control</td>
+                                <td class="border-x border-line bg-porcelain px-6 py-5 font-extrabold text-pine">ZIP, city, radius, and category based</td>
+                                <td class="px-6 py-5 text-muted">Depends on campaign skill</td>
+                                <td class="px-6 py-5 text-muted">Often broad markets</td>
+                                <td class="px-6 py-5 text-muted">Requires internal systems</td>
+                            </tr>
+                            <tr class="border-t border-line">
+                                <td class="px-6 py-5 font-bold">Speed</td>
+                                <td class="border-x border-line bg-porcelain px-6 py-5 font-extrabold text-pine">Launch focused, then scale</td>
+                                <td class="px-6 py-5 text-muted">Slower onboarding</td>
+                                <td class="px-6 py-5 text-muted">Fast but inconsistent</td>
+                                <td class="px-6 py-5 text-muted">Slow to recruit</td>
+                            </tr>
+                            <tr class="border-t border-line">
+                                <td class="px-6 py-5 font-bold">Success metric</td>
+                                <td class="border-x border-line bg-porcelain px-6 py-5 font-extrabold text-pine">Qualified roofing opportunities</td>
+                                <td class="px-6 py-5 text-muted">Clicks, impressions, reports</td>
+                                <td class="px-6 py-5 text-muted">Raw lead count</td>
+                                <td class="px-6 py-5 text-muted">Depends on management</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
+        </section>
+
+        <section class="border-y border-line bg-porcelain px-5 py-24">
+            <div class="mx-auto max-w-6xl">
+                <div class="mb-12 max-w-2xl">
+                    <span class="section-kicker">Partner feedback</span>
+                    <h2 class="mt-3 font-serif text-4xl font-semibold leading-tight md:text-5xl">The kind of lead flow roofers want.</h2>
+                </div>
+                <div class="grid gap-4 md:grid-cols-3">
+                    <figure class="work-card p-7">
+                        <blockquote class="text-base leading-7 text-ink">"The leads were easier for our office to work because the roof issue and city were clear before the first call. That alone saved our estimators a lot of wasted follow-up."</blockquote>
+                        <figcaption class="mt-6 border-t border-line pt-5">
+                            <div class="font-extrabold">Daniel Porter</div>
+                            <div class="text-sm text-muted">Owner, Porter Ridge Roofing</div>
+                        </figcaption>
+                    </figure>
+                    <figure class="work-card p-7">
+                        <blockquote class="text-base leading-7 text-ink">"We were tired of buying the same storm leads as everyone else. What mattered here was tighter geography and clearer rules for what counted as an accepted lead."</blockquote>
+                        <figcaption class="mt-6 border-t border-line pt-5">
+                            <div class="font-extrabold">Megan Wallace</div>
+                            <div class="text-sm text-muted">Operations Manager, Summitline Exteriors</div>
+                        </figcaption>
+                    </figure>
+                    <figure class="work-card p-7">
+                        <blockquote class="text-base leading-7 text-ink">"The best part was being able to slow down when our calendar filled up. We could focus on replacement and inspection calls without drowning the sales team."</blockquote>
+                        <figcaption class="mt-6 border-t border-line pt-5">
+                            <div class="font-extrabold">Travis McCall</div>
+                            <div class="text-sm text-muted">General Manager, Northmark Roofing Co.</div>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="px-5 py-24">
+            <div class="mx-auto max-w-3xl">
+                <div class="mb-10 text-center">
+                    <span class="section-kicker">FAQ</span>
+                    <h2 class="mt-3 font-serif text-4xl font-semibold leading-tight md:text-5xl">Common questions from roofing companies.</h2>
+                </div>
+
+                <div class="space-y-3">
+                    <details class="faq-item rounded-lg border border-line bg-porcelain">
+                        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 p-6 font-extrabold">
+                            <span>What roofing leads can we buy?</span>
+                            <span class="text-xl text-moss">+</span>
+                        </summary>
+                        <div class="px-6 pb-6 text-sm leading-7 text-muted">
+                            Common categories include roof replacement, storm damage inspections, leak repairs, general roof inspections, and exterior add-ons like gutters.
+                        </div>
+                    </details>
+                    <details class="faq-item rounded-lg border border-line bg-porcelain">
+                        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 p-6 font-extrabold">
+                            <span>Do I need a long-term retainer?</span>
+                            <span class="text-xl text-moss">+</span>
+                        </summary>
+                        <div class="px-6 pb-6 text-sm leading-7 text-muted">
+                            No fixed monthly retainer is required. You can start with a controlled order, review lead quality, and decide whether to keep going.
+                        </div>
+                    </details>
+                    <details class="faq-item rounded-lg border border-line bg-porcelain">
+                        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 p-6 font-extrabold">
+                            <span>Can we choose the service area?</span>
+                            <span class="text-xl text-moss">+</span>
+                        </summary>
+                        <div class="px-6 pb-6 text-sm leading-7 text-muted">
+                            Yes. Territory is one of the most important filters for roofing. We can define ZIP codes, cities, radius, counties, or specific storm-affected areas before launch.
+                        </div>
+                    </details>
+                    <details class="faq-item rounded-lg border border-line bg-porcelain">
+                        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 p-6 font-extrabold">
+                            <span>What makes a roofing lead qualified?</span>
+                            <span class="text-xl text-moss">+</span>
+                        </summary>
+                        <div class="px-6 pb-6 text-sm leading-7 text-muted">
+                            Typical filters include service area, roofing need, homeowner status, project timing, basic issue details, and valid contact information. Custom questions can be added before launch.
+                        </div>
+                    </details>
+                    <details class="faq-item rounded-lg border border-line bg-porcelain">
+                        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 p-6 font-extrabold">
+                            <span>Are the leads exclusive?</span>
+                            <span class="text-xl text-moss">+</span>
+                        </summary>
+                        <div class="px-6 pb-6 text-sm leading-7 text-muted">
+                            Leads are delivered according to the territory and category rules agreed before launch. If exclusivity is important in your market, we define those rules clearly before you order.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="bg-ink px-5 py-24 text-white">
+            <div class="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+                <div class="lg:sticky lg:top-28">
+                    <span class="text-xs font-extrabold uppercase text-amber">Book a strategy call</span>
+                    <h2 class="mt-4 font-serif text-4xl font-semibold leading-tight md:text-6xl">See what a qualified roofing lead would look like in your market.</h2>
+                    <p class="mt-5 text-lg leading-8 text-white/72">
+                        We will talk through your territory, roofing categories, crew capacity, and the lead criteria that would make sense for your sales team.
+                    </p>
+                    <div class="mt-8 space-y-4 text-sm font-semibold text-white/78">
+                        <div class="flex items-center gap-3"><i data-lucide="map-pin" class="h-4 w-4 text-amber"></i> ZIP code and storm-market targeting</div>
+                        <div class="flex items-center gap-3"><i data-lucide="filter" class="h-4 w-4 text-amber"></i> Clear accepted-lead criteria before launch</div>
+                        <div class="flex items-center gap-3"><i data-lucide="circle-pause" class="h-4 w-4 text-amber"></i> Scale up or slow down around crew capacity</div>
+                    </div>
+                </div>
+
+                <div class="overflow-hidden rounded-lg border border-white/14 bg-white shadow-soft">
+                    <div class="calendly-inline-widget" data-url="https://calendly.com/sssolt750/30min" style="min-width:320px;height:700px;"></div>
+                    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-line bg-porcelain px-5 py-10">
+        <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 md:flex-row">
+            <a href="index.html" class="font-serif text-2xl font-semibold text-ink">SolidlyLeads</a>
+            <div class="flex flex-wrap justify-center gap-6 text-sm font-bold text-muted">
+                <a href="about.html" class="hover:text-ink">About</a>
+                <a href="privacy.html" class="hover:text-ink">Privacy</a>
+                <a href="terms.html" class="hover:text-ink">Terms</a>
+                <a href="refund.html" class="hover:text-ink">Refund Policy</a>
+                <a href="#contact" class="hover:text-ink">Contact</a>
+            </div>
+            <div class="text-sm text-muted">Copyright 2026 SolidlyLeads. All rights reserved.</div>
         </div>
     </footer>
 
